@@ -67,9 +67,7 @@ const projects = [
 ];
 
 const news = [
-  { date: "Apr 2026", text: "NIMISHES Lab officially launches as an independent research initiative" },
-  { date: "Mar 2026", text: "Brain tumor detection pipeline reaches initial benchmark results" },
-  { date: "Feb 2026", text: "First dataset curation for chest X-ray classification begins" },
+  { date: "Apr 2026", text: "NIMISHES Lab officially launches as an independent research initiative" }
 ];
 
 const fadeUp = {

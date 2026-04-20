@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Handshake, User, Users, type LucideIcon } from "lucide-react";
+import { Handshake, User, Users, type LucideIcon } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -29,23 +29,18 @@ const sections: PeopleSection[] = [
     ],
   },
   {
-    title: "Lead Researcher",
+    title: "Lead Researchers",
     icon: Handshake,
     members: [
       {
         name: "Farhana Hossain Swarnali",
         role: "Lead Researcher",
-          affiliation: "University of Utah",
+        affiliation: "Incoming PhD Student, University of Utah",
       },
-    ],
-  },
-  {
-    title: "Incoming PhD Student",
-    icon: GraduationCap,
-    members: [
       {
         name: "Md Shihabul Islam Shovo",
-          affiliation: "Ahsanullah University of Science and Technology",
+        role: "Lead Researcher",
+        affiliation: "Ahsanullah University of Science and Technology",
       },
     ],
   },
@@ -55,11 +50,11 @@ const sections: PeopleSection[] = [
     members: [
       {
         name: "Vaskor Debnath Aninda",
-          affiliation: "Brac University",
+        affiliation: "Brac University",
       },
       {
         name: "Sudeepta Chandra Paul",
-          affiliation: "Ahsanullah University of Science and Technology",
+        affiliation: "Ahsanullah University of Science and Technology",
       },
     ],
   },
