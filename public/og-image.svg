@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <g transform="translate(600, 315)">
+    <path d="M-60 -80 A 30 30 0 0 1 0 -40 V 80 A 30 30 0 0 1 -59.6 8.8 A 30 30 0 0 1 -89 -20 A 36 36 0 0 1 -93 -68 A 30 30 0 0 1 -53 -105 A 30 30 0 0 1 -29 -135 A 30 30 0 0 1 -60 -80 Z" fill="#8b5cf6" stroke="#a78bfa" stroke-width="3"/>
+    <path d="M60 -80 A 30 30 0 0 0 0 -40 V 80 A 30 30 0 0 0 59.6 8.8 A 30 30 0 0 0 89 -20 A 36 36 0 0 0 93 -68 A 30 30 0 0 0 53 -105 A 30 30 0 0 0 29 -135 A 30 30 0 0 0 60 -80 Z" fill="#8b5cf6" stroke="#a78bfa" stroke-width="3"/>
+  </g>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle">NIMISHES Lab</text>
+  <text x="600" y="470" font-family="Arial, sans-serif" font-size="24" fill="#94a3b8" text-anchor="middle">AI-Driven Medical Imaging Research</text>
+</svg>
