@@ -18,7 +18,7 @@ const sections = [
     icon: BookOpen,
     title: "Learning Resources",
     items: [
-      { name: "Deep Learning for Medical Imaging — CS229 Notes", link: "#", desc: "Stanford course materials on ML in healthcare" },
+      { name: "Deep Learning for Medical Imaging  CS229 Notes", link: "#", desc: "Stanford course materials on ML in healthcare" },
       { name: "MONAI Documentation", link: "#", desc: "Official docs for the Medical Open Network for AI" },
       { name: "FastAI Medical Imaging", link: "#", desc: "Practical deep learning course with medical imaging applications" },
     ],

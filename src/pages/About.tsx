@@ -12,7 +12,7 @@ const sections = [
   {
     icon: Target,
     title: "Mission",
-    text: "To design and deploy reliable, efficient, and clinically grounded AI systems for medical data analysis — bridging the gap between research prototypes and real-world healthcare impact.",
+    text: "To design and deploy reliable, efficient, and clinically grounded AI systems for medical data analysis  bridging the gap between research prototypes and real-world healthcare impact.",
   },
   {
     icon: BookOpen,

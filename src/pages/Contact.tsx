@@ -29,7 +29,7 @@ const Contact = () => {
               <div className="p-6 rounded-xl bg-card border border-border">
                 <MapPin className="h-6 w-6 text-primary mb-3" />
                 <h3 className="font-heading font-semibold mb-1">Location</h3>
-                <p className="text-sm text-muted-foreground">Bangladesh — Remote Research Lab</p>
+                <p className="text-sm text-muted-foreground">Bangladesh  Remote Research Lab</p>
               </div>
             </motion.div>
 

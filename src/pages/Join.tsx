@@ -13,7 +13,7 @@ const roles = [
   {
     icon: Heart,
     title: "Volunteer Contributor",
-    desc: "Contribute to open-source tools, dataset curation, or documentation. No formal ML background required — enthusiasm and willingness to learn are what matter most.",
+    desc: "Contribute to open-source tools, dataset curation, or documentation. No formal ML background required  enthusiasm and willingness to learn are what matter most.",
   },
 ];
 
@@ -57,19 +57,21 @@ const Join = () => {
                 <p className="text-primary text-sm">Thank you for your interest! We'll be in touch.</p>
               ) : (
                 <form
-                  onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                  action="https://formspree.io/f/xzdoeadv"
+                  method="POST"
+                  onSubmit={(e) => { setSubmitted(true); }}
                   className="space-y-4"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Full Name" required className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
-                    <input type="email" placeholder="Email" required className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                    <input type="text" name="name" placeholder="Full Name" required className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                    <input type="email" name="email" placeholder="Email" required className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
                   </div>
-                  <select className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm focus:outline-none focus:ring-1 focus:ring-primary">
-                    <option>Research Intern</option>
-                    <option>Volunteer Contributor</option>
-                    <option>Collaboration Inquiry</option>
+                  <select name="role" className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm focus:outline-none focus:ring-1 focus:ring-primary">
+                    <option value="Research Intern">Research Intern</option>
+                    <option value="Volunteer Contributor">Volunteer Contributor</option>
+                    <option value="Collaboration Inquiry">Collaboration Inquiry</option>
                   </select>
-                  <textarea placeholder="Brief message about your background and interests" rows={4} className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary resize-none" />
+                  <textarea name="message" placeholder="Brief message about your background and interests" rows={4} className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary resize-none" />
                   <button type="submit" className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity text-sm">
                     <Send size={16} /> Submit
                   </button>
