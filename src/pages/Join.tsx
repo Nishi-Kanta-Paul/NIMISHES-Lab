@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import { Briefcase, Heart, Send } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -18,7 +18,7 @@ const roles = [
 ];
 
 const Join = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [state, handleSubmit] = useForm("xzdoeadv");
 
   return (
     <Layout>
@@ -53,27 +53,37 @@ const Join = () => {
               className="p-6 rounded-xl bg-card border border-border"
             >
               <h3 className="font-heading font-semibold text-lg mb-4">Apply / Get in Touch</h3>
-              {submitted ? (
+              {state.succeeded ? (
                 <p className="text-primary text-sm">Thank you for your interest! We'll be in touch.</p>
               ) : (
                 <form
-                  action="https://formspree.io/f/xzdoeadv"
-                  method="POST"
-                  onSubmit={(e) => { setSubmitted(true); }}
+                  onSubmit={handleSubmit}
                   className="space-y-4"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="name" placeholder="Full Name" required className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
-                    <input type="email" name="email" placeholder="Email" required className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                    <div>
+                      <input type="text" name="name" placeholder="Full Name" required className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                      <ValidationError field="name" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                    </div>
+                    <div>
+                      <input type="email" name="email" placeholder="Email" required className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+                      <ValidationError field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                    </div>
                   </div>
-                  <select name="role" className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm focus:outline-none focus:ring-1 focus:ring-primary">
-                    <option value="Research Intern">Research Intern</option>
-                    <option value="Volunteer Contributor">Volunteer Contributor</option>
-                    <option value="Collaboration Inquiry">Collaboration Inquiry</option>
-                  </select>
-                  <textarea name="message" placeholder="Brief message about your background and interests" rows={4} className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary resize-none" />
-                  <button type="submit" className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity text-sm">
-                    <Send size={16} /> Submit
+                  <div>
+                    <select name="role" className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm focus:outline-none focus:ring-1 focus:ring-primary">
+                      <option value="Research Intern">Research Intern</option>
+                      <option value="Volunteer Contributor">Volunteer Contributor</option>
+                      <option value="Collaboration Inquiry">Collaboration Inquiry</option>
+                    </select>
+                    <ValidationError field="role" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                  </div>
+                  <div>
+                    <textarea name="message" placeholder="Brief message about your background and interests" rows={4} className="w-full px-4 py-2.5 rounded-lg bg-secondary border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary resize-none" />
+                    <ValidationError field="message" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                  </div>
+                  <button type="submit" disabled={state.submitting} className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity text-sm disabled:opacity-50">
+                    <Send size={16} /> {state.submitting ? "Sending..." : "Submit"}
                   </button>
                 </form>
               )}
