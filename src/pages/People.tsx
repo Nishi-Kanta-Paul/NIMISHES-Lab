@@ -45,6 +45,19 @@ const sections: PeopleSection[] = [
     ],
   },
   {
+    title: "Collaborators & Co-authors",
+    icon: Handshake,
+    members: [
+      { name: "Israt Jerin Esha", role: "SleepEffFormer, WaveFoG", affiliation: "Canadian University of Bangladesh" },
+      { name: "Adrita Rahman", role: "SleepEffFormer, WaveFoG", affiliation: "Canadian University of Bangladesh" },
+      { name: "Shamia Maherin", role: "BGD-SF PolySegNet", affiliation: "Bangladesh University of Business and Technology" },
+      { name: "Morsheda Akter", role: "BGD-SF PolySegNet", affiliation: "Pusan National University, Republic of Korea" },
+      { name: "Kishor Morol", role: "LCM-UNet", affiliation: "Founder & CEO, Elite Research Lab" },
+      { name: "Asma Jodeiri Akbarfam", role: "Anomaly-Aware ForensiBlock" },
+      { name: "Shereen Ismail", role: "Anomaly-Aware ForensiBlock" },
+    ],
+  },
+  {
     title: "Research Assistants",
     icon: Users,
     members: [

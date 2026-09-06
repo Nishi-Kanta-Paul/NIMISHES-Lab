@@ -4,7 +4,31 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 
 const updates = [
-  { date: "April 2026", title: "NIMISHES Lab Officially Launches", desc: "The lab begins operations as an independent AI + healthcare research initiative based in Bangladesh." }
+  {
+    date: "September 2026",
+    title: "Three journal manuscripts in preparation",
+    desc: "Anomaly-Aware ForensiBlock, BGD-SF PolySegNet, and LCM-UNet are being finalised for journal submission this month, spanning blockchain forensics, polyp segmentation, and ultralight skin lesion segmentation.",
+  },
+  {
+    date: "August 2026",
+    title: "Two papers submitted to IEEE ICCIT 2026",
+    desc: "AWEF-Net (attention-weighted ensemble fusion for chest radiographs) and PDGuard (CNN-BiLSTM attention for wearable IMU-based Parkinson's detection) are under review at the 29th IEEE International Conference on Computer and Information Technology.",
+  },
+  {
+    date: "July 2026",
+    title: "DR-LiteNet accepted at iCONEECT 2026",
+    desc: "Our lightweight explainable hybrid CNN for imbalanced diabetic retinopathy grading was accepted at the 1st International Conference on Next-Generation Electrical & Electronics, Computer Systems, and Technologies.",
+  },
+  {
+    date: "June 2026",
+    title: "SleepEffFormer and WaveFoG accepted at IEEE BECITHCON 2026",
+    desc: "Both biosignal papers were accepted at the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health, to be presented in Dhaka on 4-5 September 2026.",
+  },
+  {
+    date: "April 2026",
+    title: "NIMISHES Lab Officially Launches",
+    desc: "The lab begins operations as an independent AI + healthcare research initiative based in Bangladesh.",
+  },
 ];
 
 const News = () => (
@@ -12,7 +36,7 @@ const News = () => (
     <section className="py-20">
       <div className="container mx-auto px-4">
         <SectionHeading title="News & Updates" subtitle="Latest developments from NIMISHES Lab" />
-        <div className="max-w-2xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-4">
           {updates.map((u, i) => (
             <motion.div
               key={i}

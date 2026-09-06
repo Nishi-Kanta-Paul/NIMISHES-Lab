@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Brain, Microscope, Database, Lightbulb, ShieldCheck, ArrowRight, Newspaper, Users } from "lucide-react";
+import { Brain, Microscope, Database, Lightbulb, ShieldCheck, ArrowRight, Newspaper, Users, FileText } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import heroImage from "@/assets/hero-medical-ai.jpg";
@@ -67,7 +67,69 @@ const projects = [
 ];
 
 const news = [
-  { date: "Apr 2026", text: "NIMISHES Lab officially launches as an independent research initiative" }
+  { date: "Sep 2026", text: "Three journal manuscripts in preparation: ForensiBlock, BGD-SF PolySegNet, and LCM-UNet" },
+  { date: "Aug 2026", text: "AWEF-Net and PDGuard submitted to IEEE ICCIT 2026 (under review)" },
+  { date: "Jul 2026", text: "DR-LiteNet accepted at iCONEECT 2026" },
+  { date: "Jun 2026", text: "SleepEffFormer and WaveFoG accepted at IEEE BECITHCON 2026" },
+  { date: "Apr 2026", text: "NIMISHES Lab officially launches as an independent research initiative" },
+];
+
+const publications = [
+  {
+    title: "SleepEffFormer: Efficient CNN-Transformer with Transition-Aware Smoothing for Single-Channel EEG Sleep Stage Classification",
+    venue: "IEEE BECITHCON 2026",
+    status: "Accepted",
+    result: "83.9% accuracy, 78.9% macro-F1 with only ~367K parameters",
+    pdf: "/papers/SleepEffFormer.pdf",
+  },
+  {
+    title: "WaveFoG: Wavelet-Gated Transformer for Parkinson's Freezing of Gait Detection",
+    venue: "IEEE BECITHCON 2026",
+    status: "Accepted",
+    result: "F1 0.875 under subject-independent ten-fold cross-validation",
+    pdf: "/papers/WaveFoG.pdf",
+  },
+  {
+    title: "DR-LiteNet: Lightweight Explainable Hybrid CNN for Imbalanced Diabetic Retinopathy Grading",
+    venue: "iCONEECT 2026",
+    status: "Accepted",
+    result: "QWK 0.884 on APTOS 2019 with 4.69M parameters",
+    pdf: "/papers/DR-LiteNet.pdf",
+  },
+  {
+    title: "AWEF-Net: Attention-Weighted Ensemble Fusion for Multi-Class Pulmonary Disease Classification",
+    venue: "IEEE ICCIT 2026",
+    status: "Under Review",
+    result: "96.3% macro-F1 on the COVID-19 Radiography Database",
+    pdf: "/papers/AWEF-Net.pdf",
+  },
+  {
+    title: "BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion for Polyp Segmentation",
+    venue: "Journal manuscript",
+    status: "In Preparation",
+    result: "Dice 0.887 at 35 FPS, +34.6% ASSD over CNN baselines",
+    pdf: "/papers/BGD-SF-PolySegNet.pdf",
+  },
+  {
+    title: "LCM-UNet: Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation",
+    venue: "Journal manuscript",
+    status: "In Preparation",
+    result: "34,180 parameters and 0.06 GFLOPs after reparameterization",
+    pdf: "/papers/LCM-UNet.pdf",
+  },
+];
+
+const pubStatusColors: Record<string, string> = {
+  Accepted: "bg-emerald-500/10 text-emerald-400",
+  "Under Review": "bg-primary/10 text-primary",
+  "In Preparation": "bg-yellow-500/10 text-yellow-400",
+};
+
+const impact = [
+  { value: "8", label: "Manuscripts" },
+  { value: "3", label: "IEEE acceptances" },
+  { value: "2", label: "Under review" },
+  { value: "3", label: "Journals in preparation" },
 ];
 
 const fadeUp = {
@@ -109,6 +171,12 @@ const Index = () => (
               Explore Research <ArrowRight size={18} />
             </Link>
             <Link
+              to="/publications"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground font-medium rounded-lg hover:bg-secondary transition-colors"
+            >
+              <FileText size={18} /> Read Our Papers
+            </Link>
+            <Link
               to="/projects"
               className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground font-medium rounded-lg hover:bg-secondary transition-colors"
             >
@@ -116,6 +184,20 @@ const Index = () => (
             </Link>
           </div>
         </motion.div>
+      </div>
+    </section>
+
+    {/* Impact strip */}
+    <section className="py-12 border-y border-border bg-card/30">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          {impact.map((s, i) => (
+            <motion.div key={s.label} {...fadeUp} transition={{ duration: 0.4, delay: i * 0.08 }} className="text-center">
+              <p className="font-heading text-4xl font-bold gradient-text">{s.value}</p>
+              <p className="text-xs text-muted-foreground mt-1">{s.label}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -140,8 +222,48 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Featured Projects */}
+    {/* Selected Publications */}
     <section className="py-20 bg-card/30">
+      <div className="container mx-auto px-4">
+        <SectionHeading
+          title="Selected Publications"
+          subtitle="Peer-reviewed and in-progress work across medical imaging, biosignals, and trustworthy AI - full PDFs available"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {publications.map((p, i) => (
+            <motion.a
+              key={p.title}
+              href={p.pdf}
+              target="_blank"
+              rel="noreferrer"
+              {...fadeUp}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="flex flex-col p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors group"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className={`text-xs font-medium px-2 py-1 rounded ${pubStatusColors[p.status]}`}>{p.status}</span>
+                <span className="text-xs text-muted-foreground">{p.venue}</span>
+              </div>
+              <h3 className="font-heading font-semibold text-sm leading-snug group-hover:text-primary transition-colors">
+                {p.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-3 flex-1">{p.result}</p>
+              <span className="text-xs text-primary mt-4 inline-flex items-center gap-1">
+                <FileText size={13} /> Read PDF
+              </span>
+            </motion.a>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link to="/publications" className="text-primary hover:underline text-sm inline-flex items-center gap-1">
+            View all publications <ArrowRight size={14} />
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    {/* Featured Projects */}
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <SectionHeading title="Featured Projects" subtitle="2026 project roadmap across green AI, biosignals, privacy, and clinical workflows" />
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
