@@ -8,7 +8,7 @@ const roles = [
   {
     icon: Briefcase,
     title: "Research Intern",
-    desc: "Work on active projects in medical image analysis, deep learning, or healthcare NLP. Ideal for undergraduate or graduate students with Python and ML experience.",
+    desc: "Work on active projects in computer vision, time-series modelling, efficient architectures, or explainable AI. Ideal for undergraduate or graduate students with Python and ML experience.",
   },
   {
     icon: Heart,
@@ -24,7 +24,7 @@ const Join = () => {
     <Layout>
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <SectionHeading title="Join Us" subtitle="We welcome researchers, students, and collaborators passionate about AI in healthcare" />
+          <SectionHeading title="Join Us" subtitle="We welcome researchers, students, and collaborators passionate about efficient, explainable AI for high-stakes problems" />
           <div className="max-w-3xl mx-auto space-y-10">
             {/* Roles */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

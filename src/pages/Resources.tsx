@@ -1,44 +1,61 @@
 import { motion } from "framer-motion";
-import { Database, BookOpen, GraduationCap, ExternalLink } from "lucide-react";
+import { Database, BookOpen, GraduationCap, Wrench, ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 
 const sections = [
   {
     icon: Database,
-    title: "Curated Datasets",
+    title: "Dataset Repositories",
     items: [
-      { name: "NIH Chest X-ray Dataset", link: "#", desc: "112,000+ chest X-ray images with disease labels" },
-      { name: "BraTS Challenge Dataset", link: "#", desc: "Multi-institutional brain tumor segmentation data" },
-      { name: "MIMIC-CXR", link: "#", desc: "Large-scale chest radiograph dataset with free-text reports" },
-      { name: "Retinal OCT Dataset", link: "#", desc: "Optical coherence tomography images for retinal disease classification" },
+      { name: "Hugging Face Datasets", link: "https://huggingface.co/datasets", desc: "Large open catalogue of vision, text, audio, and multimodal datasets" },
+      { name: "Kaggle Datasets", link: "https://www.kaggle.com/datasets", desc: "Community datasets and competition benchmarks across every domain" },
+      { name: "UCI Machine Learning Repository", link: "https://archive.ics.uci.edu/", desc: "Long-standing archive of classical tabular and time-series benchmarks" },
+      { name: "OpenML", link: "https://www.openml.org/", desc: "Open platform for sharing datasets, tasks, and reproducible experiment results" },
+      { name: "PhysioNet", link: "https://physionet.org/", desc: "Open physiological signal archives  EEG, ECG, accelerometry, and more" },
     ],
   },
   {
     icon: BookOpen,
     title: "Learning Resources",
     items: [
-      { name: "Deep Learning for Medical Imaging  CS229 Notes", link: "#", desc: "Stanford course materials on ML in healthcare" },
-      { name: "MONAI Documentation", link: "#", desc: "Official docs for the Medical Open Network for AI" },
-      { name: "FastAI Medical Imaging", link: "#", desc: "Practical deep learning course with medical imaging applications" },
+      { name: "Dive into Deep Learning (D2L)", link: "https://d2l.ai/", desc: "Free interactive textbook with runnable code in PyTorch, TensorFlow, and JAX" },
+      { name: "PyTorch Tutorials", link: "https://pytorch.org/tutorials/", desc: "Official guides from tensors and autograd through distributed training" },
+      { name: "Hugging Face Learn", link: "https://huggingface.co/learn", desc: "Practical courses on Transformers, diffusion models, and agents" },
+      { name: "fast.ai  Practical Deep Learning", link: "https://course.fast.ai/", desc: "Top-down course that gets you training useful models early" },
+      { name: "Distill", link: "https://distill.pub/", desc: "Archived but excellent visual explanations of core ML concepts" },
+    ],
+  },
+  {
+    icon: Wrench,
+    title: "Tools We Use",
+    items: [
+      { name: "Captum", link: "https://captum.ai/", desc: "Model interpretability for PyTorch  attributions, saliency, and layer analysis" },
+      { name: "SHAP", link: "https://shap.readthedocs.io/", desc: "Game-theoretic feature attribution, including the TreeSHAP estimator" },
+      { name: "Weights & Biases", link: "https://wandb.ai/", desc: "Experiment tracking, sweeps, and reproducible run comparison" },
+      { name: "Optuna", link: "https://optuna.org/", desc: "Define-by-run hyperparameter optimization with pruning" },
+      { name: "scikit-learn", link: "https://scikit-learn.org/", desc: "Classical ML, preprocessing, metrics, and cross-validation utilities" },
+      { name: "imbalanced-learn", link: "https://imbalanced-learn.org/", desc: "Resampling methods including SMOTE and ADASYN for skewed datasets" },
     ],
   },
   {
     icon: GraduationCap,
-    title: "Beginner Guides",
+    title: "Getting Started in Research",
     items: [
-      { name: "Introduction to Medical Image Analysis with Python", link: "#", desc: "Getting started with SimpleITK and NumPy for DICOM data" },
-      { name: "Transfer Learning for Radiology", link: "#", desc: "How to fine-tune pretrained models on medical imaging tasks" },
-      { name: "Understanding DICOM Format", link: "#", desc: "A beginner's guide to the standard medical imaging file format" },
+      { name: "Papers We Love", link: "https://paperswelove.org/", desc: "Curated repository of influential computer science papers worth reading" },
+      { name: "arXiv  Machine Learning", link: "https://arxiv.org/list/cs.LG/recent", desc: "Preprint feed for the latest machine learning research" },
+      { name: "ML Reproducibility Checklist", link: "https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf", desc: "What a rigorous, reproducible ML paper should report" },
+      { name: "Papers with Code Datasets", link: "https://paperswithcode.com/datasets", desc: "Benchmarks linked to the papers and implementations that use them" },
     ],
   },
 ];
+
 
 const Resources = () => (
   <Layout>
     <section className="py-20">
       <div className="container mx-auto px-4">
-        <SectionHeading title="Resources" subtitle="Datasets, tools, and learning materials for medical imaging AI" />
+        <SectionHeading title="Resources" subtitle="Datasets, tools, and learning materials we rely on  and recommend to anyone starting in machine learning research" />
         <div className="max-w-3xl mx-auto space-y-12">
           {sections.map((s, si) => (
             <motion.div
@@ -53,7 +70,7 @@ const Resources = () => (
               </h3>
               <div className="space-y-3">
                 {s.items.map((item) => (
-                  <a key={item.name} href={item.link} className="block p-4 rounded-lg bg-card border border-border hover:border-primary/30 transition-colors group">
+                  <a key={item.name} href={item.link} target="_blank" rel="noreferrer" className="block p-4 rounded-lg bg-card border border-border hover:border-primary/30 transition-colors group">
                     <div className="flex items-center justify-between">
                       <p className="font-medium text-sm group-hover:text-primary transition-colors">{item.name}</p>
                       <ExternalLink size={14} className="text-muted-foreground" />

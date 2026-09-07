@@ -24,7 +24,7 @@ const Contact = () => {
               <div className="p-6 rounded-xl bg-card border border-border">
                 <Mail className="h-6 w-6 text-primary mb-3" />
                 <h3 className="font-heading font-semibold mb-1">Email</h3>
-                <p className="text-sm text-muted-foreground">contact@nimisheslab.org</p>
+                <a href="mailto:nimisheslab72@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">nimisheslab72@gmail.com</a>
               </div>
               <div className="p-6 rounded-xl bg-card border border-border">
                 <MapPin className="h-6 w-6 text-primary mb-3" />

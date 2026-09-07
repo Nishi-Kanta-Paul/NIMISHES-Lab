@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Brain, Mail, MapPin } from "lucide-react";
+import { Network, Mail, MapPin } from "lucide-react";
 
 const Footer = () => (
   <footer className="border-t border-border bg-card/50 mt-20">
@@ -7,11 +7,11 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <Brain className="h-6 w-6 text-primary" />
+            <Network className="h-6 w-6 text-primary" />
             <span className="font-heading font-bold">NIMISHES Lab</span>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Nishi Medical Imaging & Intelligent Health Engineering Systems Lab
+            An independent AI and machine learning research lab building efficient, explainable models for high-stakes domains.
           </p>
         </div>
 
@@ -19,7 +19,6 @@ const Footer = () => (
           <h4 className="font-heading font-semibold text-sm mb-3">Research</h4>
           <div className="flex flex-col gap-2 text-sm text-muted-foreground">
             <Link to="/research" className="hover:text-primary transition-colors">Research Areas</Link>
-            <Link to="/projects" className="hover:text-primary transition-colors">Projects</Link>
             <Link to="/publications" className="hover:text-primary transition-colors">Publications</Link>
           </div>
         </div>
@@ -37,7 +36,7 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-sm mb-3">Contact</h4>
           <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-            <span className="flex items-center gap-2"><Mail size={14} /> contact@nimisheslab.org</span>
+            <a href="mailto:nimisheslab72@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail size={14} /> nimisheslab72@gmail.com</a>
             <span className="flex items-center gap-2"><MapPin size={14} /> Bangladesh (Remote)</span>
           </div>
         </div>

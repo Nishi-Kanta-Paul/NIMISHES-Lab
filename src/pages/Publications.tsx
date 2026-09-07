@@ -211,7 +211,7 @@ const Publications = () => (
       <div className="container mx-auto px-4">
         <SectionHeading
           title="Publications"
-          subtitle="Peer-reviewed and in-progress research from NIMISHES Lab across medical imaging, biosignals, and trustworthy AI. Full PDFs are available for every manuscript."
+          subtitle="Peer-reviewed and in-progress research across computer vision, signal modelling, efficient architectures, and trustworthy AI. Full PDFs are available for every manuscript."
         />
 
         <div className="max-w-4xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
