@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local source PDFs (served copies live in public/papers/)
+PAPER_PDF/
