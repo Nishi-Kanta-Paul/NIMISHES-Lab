@@ -12,7 +12,7 @@ const areas = [
     papers: [
       { name: "AWEF-Net - input-adaptive attention gating for ensemble fusion", pdf: "/papers/AWEF-Net.pdf" },
       { name: "WaveFoG - wavelet-gated dual-branch CNN-Transformer", pdf: "/papers/WaveFoG.pdf" },
-      { name: "LCM-UNet - state-space (Mamba) U-Net with reparameterizable local adapters", pdf: "/papers/LCM-UNet.pdf" },
+      { name: "LCM-UNet - state-space (Mamba) U-Net with reparameterizable local adapters" },
     ],
   },
   {
@@ -20,7 +20,7 @@ const areas = [
     title: "Efficient & Edge AI",
     desc: "Building models under hard parameter, latency, and FLOP budgets so they run on CPUs, edge devices, and consumer hardware  using structural reparameterization, compact backbones, and architecture-level compression rather than post-hoc pruning alone.",
     papers: [
-      { name: "LCM-UNet - 34,180 parameters at 0.06 GFLOPs, fused exactly at inference", pdf: "/papers/LCM-UNet.pdf" },
+      { name: "LCM-UNet - 34,180 parameters at 0.06 GFLOPs, fused exactly at inference" },
       { name: "SleepEffFormer - competitive accuracy with 3-5x fewer parameters", pdf: "/papers/SleepEffFormer.pdf" },
       { name: "PDGuard - 18.3 ms per window on CPU, smartphone-class deployment", pdf: "/papers/PDGuard.pdf" },
     ],
@@ -30,8 +30,8 @@ const areas = [
     title: "Computer Vision",
     desc: "Classification, segmentation, and dense prediction  including boundary-aware segmentation, multi-scale context aggregation, selective skip fusion, and ensemble strategies that adapt to the input rather than averaging over it.",
     papers: [
-      { name: "BGD-SF PolySegNet - boundary guidance as an architectural component", pdf: "/papers/BGD-SF-PolySegNet.pdf" },
-      { name: "LCM-UNet - ultralight segmentation with reparameterized local compensation", pdf: "/papers/LCM-UNet.pdf" },
+      { name: "BGD-SF PolySegNet - boundary guidance as an architectural component" },
+      { name: "LCM-UNet - ultralight segmentation with reparameterized local compensation" },
       { name: "AWEF-Net - multi-class image classification via adaptive ensemble fusion", pdf: "/papers/AWEF-Net.pdf" },
     ],
   },
@@ -51,7 +51,7 @@ const areas = [
     desc: "Making predictions inspectable and defensible by the people who act on them, through gradient- and game-theoretic attribution, attention analysis, and calibrated, honestly-reported uncertainty.",
     papers: [
       { name: "DR-LiteNet - Grad-CAM saliency for post-hoc explanation", pdf: "/papers/DR-LiteNet.pdf" },
-      { name: "Anomaly-Aware ForensiBlock - TreeSHAP explanations with verifiable audit linkage", pdf: "/papers/Anomaly-Aware-ForensiBlock.pdf" },
+      { name: "Anomaly-Aware ForensiBlock - TreeSHAP explanations with verifiable audit linkage" },
       { name: "SleepEffFormer - attention maps validated against domain expectations", pdf: "/papers/SleepEffFormer.pdf" },
     ],
   },
@@ -62,7 +62,7 @@ const areas = [
     papers: [
       { name: "DR-LiteNet - ADASYN applied in feature space across five imbalanced grades", pdf: "/papers/DR-LiteNet.pdf" },
       { name: "WaveFoG - focal loss where positives are 12-18% of windows", pdf: "/papers/WaveFoG.pdf" },
-      { name: "Anomaly-Aware ForensiBlock - AUPRC-first evaluation at ~80x the no-skill baseline", pdf: "/papers/Anomaly-Aware-ForensiBlock.pdf" },
+      { name: "Anomaly-Aware ForensiBlock - AUPRC-first evaluation at ~80x the no-skill baseline" },
     ],
   },
   {
@@ -70,7 +70,7 @@ const areas = [
     title: "Secure & Intelligent Data Systems",
     desc: "Anomaly detection, behavioral monitoring, and privacy-aware infrastructure for sensitive data  combining machine learning with tamper-evident logging, access control, and verifiable auditing.",
     papers: [
-      { name: "Anomaly-Aware ForensiBlock - risk-adaptive behavioral monitoring on-chain", pdf: "/papers/Anomaly-Aware-ForensiBlock.pdf" },
+      { name: "Anomaly-Aware ForensiBlock - risk-adaptive behavioral monitoring on-chain" },
     ],
   },
   {
@@ -78,8 +78,8 @@ const areas = [
     title: "Rigorous Evaluation & Reproducibility",
     desc: "Treating experimental design as part of the contribution: subject-disjoint and grouped cross-validation, external held-out datasets, non-parametric significance testing with effect sizes, and baselines that share identical folds and preprocessing.",
     papers: [
-      { name: "BGD-SF PolySegNet - four external datasets, Wilcoxon tests across seven ablations", pdf: "/papers/BGD-SF-PolySegNet.pdf" },
-      { name: "LCM-UNet - three seeds, paired image-level tests, external transfer evaluation", pdf: "/papers/LCM-UNet.pdf" },
+      { name: "BGD-SF PolySegNet - four external datasets, Wilcoxon tests across seven ablations" },
+      { name: "LCM-UNet - three seeds, paired image-level tests, external transfer evaluation" },
       { name: "PDGuard - strictly subject-disjoint folds shared by every baseline", pdf: "/papers/PDGuard.pdf" },
     ],
   },
@@ -150,15 +150,25 @@ const Research = () => (
                     <ul className="space-y-1.5">
                       {a.papers.map((paper) => (
                         <li key={paper.name}>
-                          <a
-                            href={paper.pdf}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-start gap-2"
-                          >
-                            <FileText size={13} className="mt-0.5 shrink-0 text-primary" />
-                            {paper.name}
-                          </a>
+                          {paper.pdf ? (
+                            <a
+                              href={paper.pdf}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-start gap-2"
+                            >
+                              <FileText size={13} className="mt-0.5 shrink-0 text-primary" />
+                              {paper.name}
+                            </a>
+                          ) : (
+                            <span
+                              title="Manuscript in preparation - available from the authors on request"
+                              className="text-sm text-muted-foreground inline-flex items-start gap-2"
+                            >
+                              <FileText size={13} className="mt-0.5 shrink-0 text-muted-foreground" />
+                              {paper.name}
+                            </span>
+                          )}
                         </li>
                       ))}
                     </ul>

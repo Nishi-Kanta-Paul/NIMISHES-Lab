@@ -39,8 +39,8 @@ const founder: Member = {
   affiliation: "Ahsanullah University of Science and Technology",
   location: "Dhaka, Bangladesh",
   image: "/Profile/Nishi.jpeg",
-  bio: "Founded NIMISHES Lab in 2026 to work on efficient, explainable deep learning for high-stakes decisions. Lead or co-author on eight manuscripts spanning computer vision, signal modelling, and trustworthy AI, with work accepted at IEEE BECITHCON 2026 and iCONEECT 2026.",
-  papers: ["SleepEffFormer", "BGD-SF PolySegNet", "LCM-UNet", "ForensiBlock", "WaveFoG"],
+  bio: "Founded NIMISHES Lab in 2026 to work on efficient, explainable deep learning for high-stakes decisions. Lead or co-author on nine manuscripts spanning computer vision, signal modelling, and trustworthy AI, with work accepted at IEEE BECITHCON 2026 and iCONEECT 2026.",
+  papers: ["SleepEffFormer", "BGD-SF PolySegNet", "LCM-UNet", "ForensiBlock", "WaveFoG", "CoMAF-Polyp"],
   links: {
     email: "nishikantapaul108@gmail.com",
     linkedin: "https://www.linkedin.com/in/nishi-kanta-paul-4251351b8/",
@@ -67,7 +67,7 @@ const groups: Group[] = [
         name: "Md Shihabul Islam Shovo",
         role: "Lead Researcher",
         affiliation: "Ahsanullah University of Science and Technology",
-        papers: ["WaveFoG", "LCM-UNet", "SleepEffFormer"],
+        papers: ["WaveFoG", "LCM-UNet", "SleepEffFormer", "CoMAF-Polyp"],
         links: {
           email: "shihabul900@gmail.com",
           github: "https://github.com/Shihabul-Shuvo",
@@ -97,7 +97,7 @@ const groups: Group[] = [
   {
     title: "Collaborators & Co-authors",
     icon: UserRound,
-    blurb: "Researchers across four institutions and three countries who have co-authored our work.",
+    blurb: "Researchers across four institutions in the United States and Austria who have co-authored our work.",
     columns: "sm:grid-cols-2 lg:grid-cols-3",
     members: [
       {
@@ -122,6 +122,12 @@ const groups: Group[] = [
         },
       },
       {
+        name: "Camila Gonzalez",
+        affiliation:
+          "Dept. of Anesthesia, Intensive Care Medicine, and Pain Medicine, Medical University of Vienna, Austria",
+        papers: ["CoMAF-Polyp"],
+      },
+      {
         name: "Shereen Ismail",
         role: "Research Scientist",
         affiliation: "Merit Network, University of Michigan",
@@ -130,30 +136,6 @@ const groups: Group[] = [
           scholar: "https://scholar.google.com/citations?user=zlzGrwIAAAAJ&hl=en",
           linkedin: "https://www.linkedin.com/in/shereen-ismail-phd-49b35415/",
         },
-      },
-      {
-        name: "Morsheda Akter",
-        affiliation: "Pusan National University, Republic of Korea",
-        papers: ["BGD-SF PolySegNet"],
-        links: { email: "anniislam1108@gmail.com" },
-      },
-      {
-        name: "Shamia Maherin",
-        affiliation: "Bangladesh University of Business and Technology",
-        papers: ["BGD-SF PolySegNet"],
-        links: { email: "shamiamaherin@gmail.com" },
-      },
-      {
-        name: "Israt Jerin Esha",
-        affiliation: "Canadian University of Bangladesh",
-        papers: ["SleepEffFormer", "WaveFoG"],
-        links: { email: "jeriniesha@gmail.com" },
-      },
-      {
-        name: "Adrita Rahman",
-        affiliation: "Canadian University of Bangladesh",
-        papers: ["SleepEffFormer", "WaveFoG"],
-        links: { email: "adrita.adi141@gmail.com" },
       },
     ],
   },

@@ -77,7 +77,7 @@ const About = () => (
             <h3 className="font-heading font-semibold text-xl">Research Output</h3>
           </div>
           <p className="text-sm text-muted-foreground mb-6">
-            Since launching in April 2026 the lab has produced eight manuscripts spanning computer vision, signal
+            Since launching in April 2026 the lab has produced nine manuscripts spanning computer vision, signal
             modelling, efficient architectures, and secure data systems. Every paper is available to read in full.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

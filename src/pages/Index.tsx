@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Network, Cpu, Eye, Activity, Lightbulb, Scale, ShieldCheck, FlaskConical, ArrowRight, Newspaper, Users, FileText } from "lucide-react";
+import { Network, Cpu, Eye, Activity, Lightbulb, Scale, ShieldCheck, FlaskConical, ArrowRight, Newspaper, Users, FileText, Mail } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import HeroBackground from "@/components/HeroBackground";
@@ -52,8 +52,10 @@ const researchAreas = [
 
 
 
+const LAB_EMAIL = "nimisheslab72@gmail.com";
+
 const news = [
-  { date: "Sep 2026", text: "Three journal manuscripts in preparation: ForensiBlock, BGD-SF PolySegNet, and LCM-UNet" },
+  { date: "Sep 2026", text: "Four manuscripts in preparation: CoMAF-Polyp (WACV Workshop, with Medical University of Vienna), ForensiBlock, BGD-SF PolySegNet, and LCM-UNet" },
   { date: "Aug 2026", text: "AWEF-Net and PDGuard submitted to IEEE ICCIT 2026 (under review)" },
   { date: "Jul 2026", text: "DR-LiteNet accepted at iCONEECT 2026" },
   { date: "Jun 2026", text: "SleepEffFormer and WaveFoG accepted at IEEE BECITHCON 2026" },
@@ -94,14 +96,18 @@ const publications = [
     venue: "Journal manuscript",
     status: "In Preparation",
     result: "Dice 0.887 at 35 FPS, +34.6% ASSD over CNN baselines",
-    pdf: "/papers/BGD-SF-PolySegNet.pdf",
   },
   {
     title: "LCM-UNet: Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation",
     venue: "Journal manuscript",
     status: "In Preparation",
     result: "34,180 parameters and 0.06 GFLOPs after reparameterization",
-    pdf: "/papers/LCM-UNet.pdf",
+  },
+  {
+    title: "CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation",
+    venue: "WACV Workshop",
+    status: "In Preparation",
+    result: "Reliability-calibrated pseudo-label fusion, with Medical University of Vienna",
   },
 ];
 
@@ -112,10 +118,10 @@ const pubStatusColors: Record<string, string> = {
 };
 
 const impact = [
-  { value: "8", label: "Manuscripts" },
+  { value: "9", label: "Manuscripts" },
   { value: "3", label: "IEEE acceptances" },
   { value: "2", label: "Under review" },
-  { value: "3", label: "Journals in preparation" },
+  { value: "4", label: "In preparation" },
 ];
 
 const fadeUp = {
@@ -204,14 +210,14 @@ const Index = () => (
       <div className="container mx-auto px-4">
         <SectionHeading
           title="Selected Publications"
-          subtitle="Peer-reviewed and in-progress work across vision, signals, efficient architectures, and trustworthy AI  full PDFs available"
+          subtitle="Peer-reviewed and in-progress work across vision, signals, efficient architectures, and trustworthy AI  PDFs available, manuscripts in preparation on request"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {publications.map((p, i) => (
             <motion.a
               key={p.title}
-              href={p.pdf}
-              target="_blank"
+              href={p.pdf ?? `mailto:${LAB_EMAIL}?subject=${encodeURIComponent(`Manuscript request: ${p.title}`)}`}
+              target={p.pdf ? "_blank" : undefined}
               rel="noreferrer"
               {...fadeUp}
               transition={{ duration: 0.5, delay: i * 0.08 }}
@@ -226,7 +232,15 @@ const Index = () => (
               </h3>
               <p className="text-sm text-muted-foreground mt-3 flex-1">{p.result}</p>
               <span className="text-xs text-primary mt-4 inline-flex items-center gap-1">
-                <FileText size={13} /> Read PDF
+                {p.pdf ? (
+                  <>
+                    <FileText size={13} /> Read PDF
+                  </>
+                ) : (
+                  <>
+                    <Mail size={13} /> Request from authors
+                  </>
+                )}
               </span>
             </motion.a>
           ))}

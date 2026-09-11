@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileText, Github, CheckCircle2, Clock, PenLine, Users2, type LucideIcon } from "lucide-react";
+import { FileText, Github, CheckCircle2, Clock, PenLine, Users2, Mail, type LucideIcon } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -12,9 +12,9 @@ type Paper = {
   venueNote?: string;
   domain: string;
   summary: string;
-  highlights: string[];
+  highlights?: string[];
   keywords: string[];
-  pdf: string;
+  pdf?: string;
   code?: string;
 };
 
@@ -24,6 +24,8 @@ type Section = {
   blurb: string;
   papers: Paper[];
 };
+
+const LAB_EMAIL = "nimisheslab72@gmail.com";
 
 const sections: Section[] = [
   {
@@ -134,8 +136,26 @@ const sections: Section[] = [
   {
     status: "In Preparation",
     icon: PenLine,
-    blurb: "Journal manuscripts in preparation, targeting submission in September 2026.",
+    blurb: "Journal and workshop manuscripts in preparation. These are not circulated publicly - email the authors and they will share a copy on request.",
     papers: [
+      {
+        title:
+          "CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation",
+        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Camila Gonzalez",
+        venue: "WACV Workshop",
+        venueNote: "Target venue - manuscript in preparation",
+        domain: "Medical Imaging - Endoscopy",
+        summary:
+          "A semi-supervised polyp segmentation framework that draws pseudo-labels from both a task-specific specialist segmenter and a general vision foundation model, then fuses them under calibrated reliability estimates so each source is trusted in proportion to how well-calibrated it is on a given region, rather than uniformly.",
+        keywords: [
+          "Polyp segmentation",
+          "Semi-supervised learning",
+          "Pseudo-labelling",
+          "Foundation models",
+          "Calibration",
+          "Colonoscopy",
+        ],
+      },
       {
         title: "Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access",
         authors: "Asma Jodeiri Akbarfam, Nishi Kanta Paul, Shereen Ismail",
@@ -151,7 +171,6 @@ const sections: Section[] = [
           "All 25 alerts queued, logged, explained, and linked; all 65 audited transactions processed without linkage failure",
         ],
         keywords: ["Behavioral anomaly detection", "Blockchain", "Digital forensics", "Insider threat", "TreeSHAP", "Smart contracts"],
-        pdf: "/papers/Anomaly-Aware-ForensiBlock.pdf",
       },
       {
         title:
@@ -169,7 +188,6 @@ const sections: Section[] = [
           "35 FPS, 22.51M parameters, 65.46 GFLOPs; Wilcoxon tests significant in 6 of 7 ablation variants (p < 0.001)",
         ],
         keywords: ["Polyp segmentation", "Colonoscopy", "Boundary guidance", "EfficientNet-B4", "Attention fusion"],
-        pdf: "/papers/BGD-SF-PolySegNet.pdf",
       },
       {
         title: "LCM-UNet: A Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation",
@@ -186,7 +204,6 @@ const sections: Section[] = [
           "Fused and unfused models emit identical masks to numerical tolerance; image-level Wilcoxon significant at p < 1e-4",
         ],
         keywords: ["Skin lesion segmentation", "State space model", "Mamba", "Structural reparameterization", "U-Net"],
-        pdf: "/papers/LCM-UNet.pdf",
       },
     ],
   },
@@ -199,10 +216,10 @@ const statusStyles: Record<Status, string> = {
 };
 
 const stats = [
-  { value: "8", label: "Manuscripts" },
+  { value: "9", label: "Manuscripts" },
   { value: "3", label: "Accepted at IEEE venues" },
   { value: "2", label: "Under review (ICCIT 2026)" },
-  { value: "3", label: "Journal papers in preparation" },
+  { value: "4", label: "In preparation" },
 ];
 
 const Publications = () => (
@@ -211,7 +228,7 @@ const Publications = () => (
       <div className="container mx-auto px-4">
         <SectionHeading
           title="Publications"
-          subtitle="Peer-reviewed and in-progress research across computer vision, signal modelling, efficient architectures, and trustworthy AI. Full PDFs are available for every manuscript."
+          subtitle="Peer-reviewed and in-progress research across computer vision, signal modelling, efficient architectures, and trustworthy AI. PDFs are available for accepted and submitted work; manuscripts still in preparation are shared by the authors on request."
         />
 
         <div className="max-w-4xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
@@ -268,14 +285,16 @@ const Publications = () => (
 
                     <p className="text-sm text-muted-foreground leading-relaxed mt-4">{p.summary}</p>
 
-                    <div className="mt-4">
-                      <p className="text-xs font-medium text-foreground uppercase tracking-wide mb-2">Key results</p>
-                      <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                        {p.highlights.map((h) => (
-                          <li key={h}>{h}</li>
-                        ))}
-                      </ul>
-                    </div>
+                    {p.highlights && (
+                      <div className="mt-4">
+                        <p className="text-xs font-medium text-foreground uppercase tracking-wide mb-2">Key results</p>
+                        <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                          {p.highlights.map((h) => (
+                            <li key={h}>{h}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     <div className="flex flex-wrap gap-1.5 mt-4">
                       {p.keywords.map((k) => (
@@ -286,14 +305,23 @@ const Publications = () => (
                     </div>
 
                     <div className="flex flex-wrap gap-3 mt-5">
-                      <a
-                        href={p.pdf}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-                      >
-                        <FileText size={15} /> Read PDF
-                      </a>
+                      {p.pdf ? (
+                        <a
+                          href={p.pdf}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+                        >
+                          <FileText size={15} /> Read PDF
+                        </a>
+                      ) : (
+                        <a
+                          href={`mailto:${LAB_EMAIL}?subject=${encodeURIComponent(`Manuscript request: ${p.title}`)}`}
+                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border hover:bg-secondary transition-colors"
+                        >
+                          <Mail size={15} /> Request from authors
+                        </a>
+                      )}
                       {p.code && (
                         <a
                           href={p.code}
@@ -313,8 +341,12 @@ const Publications = () => (
         </div>
 
         <p className="max-w-4xl mx-auto text-xs text-muted-foreground mt-12 text-center">
-          Manuscripts under review or in preparation are shared as author preprints for review purposes and may differ from
-          the final published versions.
+          Manuscripts under review are shared as author preprints for review purposes and may differ from the final
+          published versions. Manuscripts in preparation are not distributed publicly - write to{" "}
+          <a href={`mailto:${LAB_EMAIL}`} className="text-primary hover:underline">
+            {LAB_EMAIL}
+          </a>{" "}
+          and the authors will share a copy on request.
         </p>
       </div>
     </section>
