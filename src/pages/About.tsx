@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Target, Eye, BookOpen, Sparkles, FileText, ArrowRight } from "lucide-react";
+import { Target, Eye, BookOpen, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -27,25 +26,6 @@ const sections = [
   },
 ];
 
-const trackRecord = [
-  {
-    label: "Accepted at IEEE venues",
-    value: "3 papers",
-    detail:
-      "SleepEffFormer and WaveFoG at IEEE BECITHCON 2026; DR-LiteNet at iCONEECT 2026.",
-  },
-  {
-    label: "Under peer review",
-    value: "2 papers",
-    detail: "AWEF-Net and PDGuard, submitted to the 29th IEEE ICCIT 2026.",
-  },
-  {
-    label: "Manuscripts in preparation",
-    value: "4 papers",
-    detail:
-      "Anomaly-Aware ForensiBlock, BGD-SF PolySegNet, and LCM-UNet targeting September 2026 journal submission, plus CoMAF-Polyp for a WACV workshop.",
-  },
-];
 
 const About = () => (
   <Layout>
@@ -71,37 +51,6 @@ const About = () => (
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto mt-16">
-          <div className="flex items-center gap-2 mb-2">
-            <FileText className="h-5 w-5 text-primary" />
-            <h3 className="font-heading font-semibold text-xl">Research Output</h3>
-          </div>
-          <p className="text-sm text-muted-foreground mb-6">
-            Since launching in April 2026 the lab has produced nine manuscripts spanning computer vision, signal
-            modelling, efficient architectures, and secure data systems. Every paper is available to read in full.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {trackRecord.map((t, i) => (
-              <motion.div
-                key={t.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="p-5 rounded-xl bg-card border border-border"
-              >
-                <p className="font-heading text-2xl font-bold gradient-text">{t.value}</p>
-                <p className="text-xs font-medium mt-1">{t.label}</p>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{t.detail}</p>
-              </motion.div>
-            ))}
-          </div>
-          <div className="mt-6">
-            <Link to="/publications" className="text-primary hover:underline text-sm inline-flex items-center gap-1">
-              See all publications with PDFs <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   </Layout>

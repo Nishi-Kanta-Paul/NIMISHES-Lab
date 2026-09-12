@@ -12,7 +12,6 @@ type Paper = {
   venueNote?: string;
   domain: string;
   summary: string;
-  highlights?: string[];
   keywords: string[];
   pdf?: string;
   code?: string;
@@ -42,12 +41,6 @@ const sections: Section[] = [
         domain: "Biosignals - EEG",
         summary:
           "A lightweight CNN-Transformer for automated sleep staging from a single EEG channel, paired with a non-parametric Transition-Aware Smoothing (TAS) layer that suppresses physiologically implausible stage transitions.",
-        highlights: [
-          "83.9% accuracy, 78.9% macro-F1, Cohen's kappa 0.765 on Sleep-EDF Expanded (78 all-night recordings, subject-wise split)",
-          "Matches AttnSleep with 3-5x fewer parameters (~367K)",
-          "Transformer encoder adds +6.6 pp macro-F1; TAS adds +1.8 pp with zero trainable parameters",
-          "Attention maps recover physiologically meaningful sleep-stage EEG signatures",
-        ],
         keywords: ["Sleep staging", "Single-channel EEG", "Transformer", "1D CNN", "Explainability", "Lightweight DL"],
         pdf: "/papers/SleepEffFormer.pdf",
         code: "https://github.com/Nishi-Kanta-Paul/SleepStage",
@@ -61,12 +54,6 @@ const sections: Section[] = [
         domain: "Wearables - Parkinson's Disease",
         summary:
           "A dual-branch CNN-Transformer that fuses discrete wavelet sub-band descriptors through a sigmoid gating layer to detect freezing-of-gait episodes from wrist-worn accelerometers under severe class imbalance.",
-        highlights: [
-          "F1 0.875 +/- 0.017 and AUPRC 0.833 +/- 0.020 on the Kaggle TLVMC FoG dataset",
-          "Subject-independent grouped ten-fold cross-validation",
-          "Up to +5.4 pp F1 over 1D CNN, Bi-LSTM, and vanilla Transformer baselines",
-          "Temporal saliency maps align with reported FoG onset characteristics",
-        ],
         keywords: ["Freezing of gait", "Parkinson's disease", "Wearable IMU", "Discrete wavelet transform", "Focal loss"],
         pdf: "/papers/WaveFoG.pdf",
         code: "https://github.com/Shihabul-Shuvo/WaveFoG",
@@ -80,12 +67,6 @@ const sections: Section[] = [
         domain: "Medical Imaging - Ophthalmology",
         summary:
           "A dual-branch network that fuses 1,280-d EfficientNetB0 features with a 52-d handcrafted lesion descriptor (vessel density, exudate intensity, texture entropy, HSV histograms), then applies ADASYN in feature space to correct five-grade class imbalance without touching the images.",
-        highlights: [
-          "88.77% +/- 0.61 accuracy, QWK 0.884 +/- 0.010, macro-F1 0.792 +/- 0.008 on APTOS 2019",
-          "Only 4.69M parameters - beats ResNet50 (23.5M) by delta-QWK = 0.022",
-          "Two-phase training: balanced head warm-up, then end-to-end fine-tuning",
-          "Grad-CAM saliency maps for post-hoc clinical explainability",
-        ],
         keywords: ["Diabetic retinopathy", "Class imbalance", "ADASYN", "EfficientNet", "Grad-CAM", "Explainable AI"],
         pdf: "/papers/DR-LiteNet.pdf",
       },
@@ -105,12 +86,6 @@ const sections: Section[] = [
         domain: "Medical Imaging - Radiology",
         summary:
           "Replaces fixed late-fusion rules with a lightweight two-layer MLP attention gate that produces input-adaptive weights for ResNet50, InceptionV3, and DenseNet201, resolving the inter-model feature conflict where one backbone dominates the fused decision.",
-        highlights: [
-          "96.3% macro-F1 and 97.1% COVID-19 recall on the COVID-19 Radiography Database (21,165 images, 4 classes)",
-          "+1.4 pp macro-F1 and +1.7 pp COVID recall over the strongest fixed-fusion baseline",
-          "Gating adds under 0.6% of total model parameters",
-          "Better cross-dataset generalisation on an external CXR corpus; learned weights reveal class-dependent backbone reliance",
-        ],
         keywords: ["Chest radiography", "Ensemble learning", "Attention", "Feature fusion", "COVID-19"],
         pdf: "/papers/AWEF-Net.pdf",
       },
@@ -122,12 +97,6 @@ const sections: Section[] = [
         domain: "Wearables - Parkinson's Disease",
         summary:
           "A compact 1D-convolution, bidirectional LSTM, and multi-head self-attention network that classifies raw wrist-worn accelerometer and gyroscope streams, targeting frequent monitoring outside the clinic.",
-        highlights: [
-          "88.34% +/- 1.01 accuracy, 83.79% balanced accuracy, pooled held-out ROC-AUC 0.918 on the PADS cohort (469 participants)",
-          "77.34% accuracy on the harder PD vs. differential-diagnosis task",
-          "Strictly subject-disjoint five-fold cross-validation; all baselines share folds, windows, and preprocessing",
-          "1.24M parameters, 18.3 ms per 4.8 s window on CPU - smartphone-class deployment",
-        ],
         keywords: ["Parkinson's disease", "IMU", "CNN", "Bi-LSTM", "Attention", "Wearable health"],
         pdf: "/papers/PDGuard.pdf",
       },
@@ -164,12 +133,6 @@ const sections: Section[] = [
         domain: "Blockchain Forensics - Explainable AI",
         summary:
           "Extends the RBAC-SA blockchain forensics model with real-time behavioral anomaly scoring, risk-adaptive response, asynchronous TreeSHAP explanations, and verifiable on-chain auditing - detecting insider misuse that static authorization cannot see.",
-        highlights: [
-          "XGBoost: AUPRC 0.257 / AUROC 0.953 across 30 re-splits of CERT r4.2 (~80x the no-skill AUPRC under heavy imbalance)",
-          "Random Forest: AUPRC 0.745 / F1 0.778 on full-schema corpus simulation",
-          "9.37 ms mean anomaly-scoring overhead (P99 = 10.37 ms) in the integrated prototype",
-          "All 25 alerts queued, logged, explained, and linked; all 65 audited transactions processed without linkage failure",
-        ],
         keywords: ["Behavioral anomaly detection", "Blockchain", "Digital forensics", "Insider threat", "TreeSHAP", "Smart contracts"],
       },
       {
@@ -181,12 +144,6 @@ const sections: Section[] = [
         domain: "Medical Imaging - Endoscopy",
         summary:
           "Treats boundary information as an active architectural component rather than an auxiliary loss, steering multi-scale context aggregation, selective skip fusion, and mask refinement through three modules on an EfficientNet-B4 backbone.",
-        highlights: [
-          "Internal test set: Dice 0.887, IoU 0.839, Boundary-F1 0.531, HD95 30.32, ASSD 18.10",
-          "+15.7% Boundary-F1, +27.5% HD95, +34.6% ASSD over the strongest CNN baselines",
-          "External validation - CVC-ClinicDB 0.891, CVC-ColonDB 0.776, ETIS-Larib 0.863, CVC-300 0.885 Dice",
-          "35 FPS, 22.51M parameters, 65.46 GFLOPs; Wilcoxon tests significant in 6 of 7 ablation variants (p < 0.001)",
-        ],
         keywords: ["Polyp segmentation", "Colonoscopy", "Boundary guidance", "EfficientNet-B4", "Attention fusion"],
       },
       {
@@ -197,12 +154,6 @@ const sections: Section[] = [
         domain: "Medical Imaging - Dermatology",
         summary:
           "Strengthens the local pathway of an ultra-compact state-space segmentation network with a zero-initialized dilated depthwise adapter that merges exactly into a single kernel after training - more capacity during learning, an unchanged graph at inference.",
-        highlights: [
-          "34,180 parameters and 0.05974 GFLOPs after reparameterization - four parameters more than the reference, identical cost",
-          "+0.48 / +0.37 pp IoU and +0.29 / +0.22 pp DSC over a retrained reference backbone on ISIC 2017 and ISIC 2018",
-          "External PH2 transfer: 86.37% +/- 0.29 IoU vs. 85.91% +/- 0.29 for the reference",
-          "Fused and unfused models emit identical masks to numerical tolerance; image-level Wilcoxon significant at p < 1e-4",
-        ],
         keywords: ["Skin lesion segmentation", "State space model", "Mamba", "Structural reparameterization", "U-Net"],
       },
     ],
@@ -284,17 +235,6 @@ const Publications = () => (
                     {p.venueNote && <p className="text-xs text-muted-foreground mt-0.5">{p.venueNote}</p>}
 
                     <p className="text-sm text-muted-foreground leading-relaxed mt-4">{p.summary}</p>
-
-                    {p.highlights && (
-                      <div className="mt-4">
-                        <p className="text-xs font-medium text-foreground uppercase tracking-wide mb-2">Key results</p>
-                        <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                          {p.highlights.map((h) => (
-                            <li key={h}>{h}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
 
                     <div className="flex flex-wrap gap-1.5 mt-4">
                       {p.keywords.map((k) => (

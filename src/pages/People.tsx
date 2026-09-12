@@ -6,7 +6,6 @@ import {
   Github,
   Globe,
   Facebook,
-  FileText,
   GraduationCap,
   Handshake,
   UserRound,
@@ -22,7 +21,6 @@ type Links = {
   github?: string;
   website?: string;
   facebook?: string;
-  cv?: string;
 };
 
 type Member = {
@@ -31,7 +29,6 @@ type Member = {
   affiliation?: string;
   location?: string;
   image?: string;
-  bio?: string;
   links?: Links;
 };
 
@@ -41,7 +38,6 @@ const founder: Member = {
   affiliation: "Ahsanullah University of Science and Technology",
   location: "Dhaka, Bangladesh",
   image: "/Profile/Nishi.jpeg",
-  bio: "Founded NIMISHES Lab in 2026 to work on efficient, explainable deep learning for high-stakes decisions. Lead or co-author on nine manuscripts spanning computer vision, signal modelling, and trustworthy AI, with work accepted at IEEE BECITHCON 2026 and iCONEECT 2026.",
   links: {
     email: "nishikantapaul108@gmail.com",
     scholar: "https://scholar.google.com/citations?user=tn-UPUAAAAAJ&hl=en",
@@ -78,7 +74,6 @@ const groups: Group[] = [
           github: "https://github.com/Shihabul-Shuvo/",
           website: "https://shihabul-shuvo.github.io/",
           facebook: "https://www.facebook.com/shihabul.shovo",
-          cv: "https://shihabul-shuvo.github.io/Portfolio-shihabul/Resume/MD-SHIHABUL-ISLAM-SHOVO.pdf",
         },
       },
     ],
@@ -95,7 +90,6 @@ const groups: Group[] = [
         affiliation:
           "Dept. of Anesthesia, Intensive Care Medicine, and Pain Medicine, Medical University of Vienna, Austria",
         image: "/Profile/ProfCamila.png",
-        bio: "PI of the Representational Intelligence for Intensive Care (RIIC) lab, working on machine learning for intensive care and perioperative medicine. PhD at TU Darmstadt; postdoctoral research at Stanford. MICCAI Young Scientist and IPMI Fran\u00e7ois Erbsmann awardee, and Career Development & Student Chair for MICCAI 2026.",
         links: {
           scholar: "https://scholar.google.com/citations?user=VbpLc7YAAAAJ&hl=en",
         },
@@ -150,7 +144,6 @@ const linkConfig: { key: keyof Links; icon: LucideIcon; label: string; href: (v:
   { key: "github", icon: Github, label: "GitHub", href: (v) => v },
   { key: "website", icon: Globe, label: "Website", href: (v) => v },
   { key: "facebook", icon: Facebook, label: "Facebook", href: (v) => v },
-  { key: "cv", icon: FileText, label: "CV", href: (v) => v },
 ];
 
 const ProfileLinks = ({ links, name }: { links?: Links; name: string }) => {
@@ -227,7 +220,6 @@ const People = () => (
                 <p className="text-primary text-sm font-medium mt-1">{founder.role}</p>
                 <p className="text-sm text-muted-foreground">{founder.affiliation}</p>
                 {founder.location && <p className="text-xs text-muted-foreground mt-0.5">{founder.location}</p>}
-                <p className="text-sm text-muted-foreground leading-relaxed mt-4 max-w-2xl">{founder.bio}</p>
                 <ProfileLinks links={founder.links} name={founder.name} />
               </div>
             </div>
@@ -262,9 +254,6 @@ const People = () => (
                         {member.role && <p className="text-xs text-primary mt-0.5">{member.role}</p>}
                         {member.affiliation && (
                           <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{member.affiliation}</p>
-                        )}
-                        {member.bio && (
-                          <p className="text-xs text-muted-foreground mt-3 leading-relaxed">{member.bio}</p>
                         )}
                         <div className="mt-auto">
                           <ProfileLinks links={member.links} name={member.name} />

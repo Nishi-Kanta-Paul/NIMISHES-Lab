@@ -6,7 +6,7 @@
 
 @layer base {
   /* Light is the default theme. Every value below is contrast-checked against
-     --background / --card: body text >= 16:1, muted text >= 6.3:1, primary >= 4.9:1.
+     --background / --card: body text >= 16:1, muted text >= 8.7:1, primary >= 4.9:1.
      The dark palette lives in .dark and is toggled by adding that class to <html>. */
   :root {
     --background: 0 0% 100%;
@@ -26,7 +26,7 @@
     --secondary-foreground: 222 32% 11%;
 
     --muted: 214 32% 95%;
-    --muted-foreground: 215 18% 38%;
+    --muted-foreground: 216 22% 30%;
 
     --accent: 199 92% 34%;
     --accent-foreground: 0 0% 100%;
@@ -71,7 +71,7 @@
     --secondary-foreground: 210 40% 92%;
 
     --muted: 220 18% 14%;
-    --muted-foreground: 215 15% 55%;
+    --muted-foreground: 214 20% 72%;
 
     --accent: 199 89% 48%;
     --accent-foreground: 220 25% 6%;

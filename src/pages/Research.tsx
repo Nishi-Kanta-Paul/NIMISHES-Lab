@@ -10,9 +10,9 @@ const areas = [
     title: "Deep Learning Architectures",
     desc: "Designing and analysing neural architectures  convolutional, recurrent, Transformer, and state-space models  with a focus on attention, gating, and multi-branch fusion as mechanisms for combining heterogeneous representations.",
     papers: [
-      { name: "AWEF-Net - input-adaptive attention gating for ensemble fusion", pdf: "/papers/AWEF-Net.pdf" },
-      { name: "WaveFoG - wavelet-gated dual-branch CNN-Transformer", pdf: "/papers/WaveFoG.pdf" },
-      { name: "LCM-UNet - state-space (Mamba) U-Net with reparameterizable local adapters" },
+      { name: "AWEF-Net", pdf: "/papers/AWEF-Net.pdf" },
+      { name: "WaveFoG", pdf: "/papers/WaveFoG.pdf" },
+      { name: "LCM-UNet" },
     ],
   },
   {
@@ -20,9 +20,9 @@ const areas = [
     title: "Efficient & Edge AI",
     desc: "Building models under hard parameter, latency, and FLOP budgets so they run on CPUs, edge devices, and consumer hardware  using structural reparameterization, compact backbones, and architecture-level compression rather than post-hoc pruning alone.",
     papers: [
-      { name: "LCM-UNet - 34,180 parameters at 0.06 GFLOPs, fused exactly at inference" },
-      { name: "SleepEffFormer - competitive accuracy with 3-5x fewer parameters", pdf: "/papers/SleepEffFormer.pdf" },
-      { name: "PDGuard - 18.3 ms per window on CPU, smartphone-class deployment", pdf: "/papers/PDGuard.pdf" },
+      { name: "LCM-UNet" },
+      { name: "SleepEffFormer", pdf: "/papers/SleepEffFormer.pdf" },
+      { name: "PDGuard", pdf: "/papers/PDGuard.pdf" },
     ],
   },
   {
@@ -30,9 +30,9 @@ const areas = [
     title: "Computer Vision",
     desc: "Classification, segmentation, and dense prediction  including boundary-aware segmentation, multi-scale context aggregation, selective skip fusion, and ensemble strategies that adapt to the input rather than averaging over it.",
     papers: [
-      { name: "BGD-SF PolySegNet - boundary guidance as an architectural component" },
-      { name: "LCM-UNet - ultralight segmentation with reparameterized local compensation" },
-      { name: "AWEF-Net - multi-class image classification via adaptive ensemble fusion", pdf: "/papers/AWEF-Net.pdf" },
+      { name: "BGD-SF PolySegNet" },
+      { name: "LCM-UNet" },
+      { name: "AWEF-Net", pdf: "/papers/AWEF-Net.pdf" },
     ],
   },
   {
@@ -40,9 +40,9 @@ const areas = [
     title: "Time-Series & Signal Intelligence",
     desc: "Learning from sequential and sensor data  wavelet and spectral representations, temporal context modelling, and sequence-level post-processing  evaluated under subject-independent protocols that test genuine generalisation.",
     papers: [
-      { name: "SleepEffFormer - CNN-Transformer with transition-aware sequence smoothing", pdf: "/papers/SleepEffFormer.pdf" },
-      { name: "WaveFoG - discrete wavelet sub-band gating for event detection", pdf: "/papers/WaveFoG.pdf" },
-      { name: "PDGuard - CNN-BiLSTM attention over raw multi-channel sensor streams", pdf: "/papers/PDGuard.pdf" },
+      { name: "SleepEffFormer", pdf: "/papers/SleepEffFormer.pdf" },
+      { name: "WaveFoG", pdf: "/papers/WaveFoG.pdf" },
+      { name: "PDGuard", pdf: "/papers/PDGuard.pdf" },
     ],
   },
   {
@@ -50,9 +50,9 @@ const areas = [
     title: "Explainable & Trustworthy AI",
     desc: "Making predictions inspectable and defensible by the people who act on them, through gradient- and game-theoretic attribution, attention analysis, and calibrated, honestly-reported uncertainty.",
     papers: [
-      { name: "DR-LiteNet - Grad-CAM saliency for post-hoc explanation", pdf: "/papers/DR-LiteNet.pdf" },
-      { name: "Anomaly-Aware ForensiBlock - TreeSHAP explanations with verifiable audit linkage" },
-      { name: "SleepEffFormer - attention maps validated against domain expectations", pdf: "/papers/SleepEffFormer.pdf" },
+      { name: "DR-LiteNet", pdf: "/papers/DR-LiteNet.pdf" },
+      { name: "Anomaly-Aware ForensiBlock" },
+      { name: "SleepEffFormer", pdf: "/papers/SleepEffFormer.pdf" },
     ],
   },
   {
@@ -60,9 +60,9 @@ const areas = [
     title: "Imbalanced & Data-Efficient Learning",
     desc: "Handling skewed, long-tailed, and label-scarce data as a first-class problem  synthetic minority generation in feature space, cost-sensitive objectives, and evaluation metrics that do not flatter a majority-class predictor.",
     papers: [
-      { name: "DR-LiteNet - ADASYN applied in feature space across five imbalanced grades", pdf: "/papers/DR-LiteNet.pdf" },
-      { name: "WaveFoG - focal loss where positives are 12-18% of windows", pdf: "/papers/WaveFoG.pdf" },
-      { name: "Anomaly-Aware ForensiBlock - AUPRC-first evaluation at ~80x the no-skill baseline" },
+      { name: "DR-LiteNet", pdf: "/papers/DR-LiteNet.pdf" },
+      { name: "WaveFoG", pdf: "/papers/WaveFoG.pdf" },
+      { name: "Anomaly-Aware ForensiBlock" },
     ],
   },
   {
@@ -70,7 +70,7 @@ const areas = [
     title: "Secure & Intelligent Data Systems",
     desc: "Anomaly detection, behavioral monitoring, and privacy-aware infrastructure for sensitive data  combining machine learning with tamper-evident logging, access control, and verifiable auditing.",
     papers: [
-      { name: "Anomaly-Aware ForensiBlock - risk-adaptive behavioral monitoring on-chain" },
+      { name: "Anomaly-Aware ForensiBlock" },
     ],
   },
   {
@@ -78,9 +78,9 @@ const areas = [
     title: "Rigorous Evaluation & Reproducibility",
     desc: "Treating experimental design as part of the contribution: subject-disjoint and grouped cross-validation, external held-out datasets, non-parametric significance testing with effect sizes, and baselines that share identical folds and preprocessing.",
     papers: [
-      { name: "BGD-SF PolySegNet - four external datasets, Wilcoxon tests across seven ablations" },
-      { name: "LCM-UNet - three seeds, paired image-level tests, external transfer evaluation" },
-      { name: "PDGuard - strictly subject-disjoint folds shared by every baseline", pdf: "/papers/PDGuard.pdf" },
+      { name: "BGD-SF PolySegNet" },
+      { name: "LCM-UNet" },
+      { name: "PDGuard", pdf: "/papers/PDGuard.pdf" },
     ],
   },
 ];
@@ -147,7 +147,7 @@ const Research = () => (
                   <p className="text-muted-foreground text-sm leading-relaxed">{a.desc}</p>
                   <div className="mt-4">
                     <p className="text-xs font-medium uppercase tracking-wide text-foreground mb-2">Representative papers</p>
-                    <ul className="space-y-1.5">
+                    <ul className="flex flex-wrap gap-x-4 gap-y-1.5">
                       {a.papers.map((paper) => (
                         <li key={paper.name}>
                           {paper.pdf ? (
