@@ -5,7 +5,56 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light is the default theme. Every value below is contrast-checked against
+     --background / --card: body text >= 16:1, muted text >= 6.3:1, primary >= 4.9:1.
+     The dark palette lives in .dark and is toggled by adding that class to <html>. */
   :root {
+    --background: 0 0% 100%;
+    --foreground: 222 32% 11%;
+
+    --card: 210 33% 98%;
+    --card-foreground: 222 32% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 32% 11%;
+
+    /* Darkened from the dark-mode blue (199 89% 48%), which is only 2.85:1 on white. */
+    --primary: 199 92% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 32% 94%;
+    --secondary-foreground: 222 32% 11%;
+
+    --muted: 214 32% 95%;
+    --muted-foreground: 215 18% 38%;
+
+    --accent: 199 92% 34%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 25% 88%;
+    --input: 214 25% 88%;
+    --ring: 199 92% 40%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 33% 98%;
+    --sidebar-foreground: 222 32% 11%;
+    --sidebar-primary: 199 92% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 32% 94%;
+    --sidebar-accent-foreground: 222 32% 11%;
+    --sidebar-border: 214 25% 88%;
+    --sidebar-ring: 199 92% 40%;
+
+    --glow: 199 92% 40%;
+    --gradient-accent: 190 85% 36%;
+    --hero-mesh-strength: 0.5;
+  }
+
+  .dark {
     --background: 220 25% 6%;
     --foreground: 210 40% 92%;
 
@@ -34,8 +83,6 @@
     --input: 220 18% 18%;
     --ring: 199 89% 48%;
 
-    --radius: 0.5rem;
-
     --sidebar-background: 220 22% 8%;
     --sidebar-foreground: 210 40% 92%;
     --sidebar-primary: 199 89% 48%;
@@ -46,6 +93,8 @@
     --sidebar-ring: 199 89% 48%;
 
     --glow: 199 89% 48%;
+    --gradient-accent: 186 95% 70%;
+    --hero-mesh-strength: 1;
   }
 }
 
@@ -65,6 +114,10 @@
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
 }
 
 @layer utilities {
@@ -77,7 +130,8 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-300;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--gradient-accent)));
   }
 
   .section-fade {

@@ -29,7 +29,7 @@ const HeroBackground = () => (
   <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
     {/* Gradient mesh */}
     <div
-      className="absolute inset-0"
+      className="absolute inset-0 opacity-[var(--hero-mesh-strength)]"
       style={{
         backgroundImage:
           "radial-gradient(ellipse 70% 60% at 15% 25%, hsl(199 89% 48% / 0.18), transparent 60%)," +
@@ -40,7 +40,7 @@ const HeroBackground = () => (
 
     {/* Grid */}
     <div
-      className="absolute inset-0 opacity-[0.14]"
+      className="absolute inset-0 opacity-[0.30] dark:opacity-[0.14]"
       style={{
         backgroundImage:
           "linear-gradient(to right, hsl(199 89% 48% / 0.35) 1px, transparent 1px)," +
@@ -59,12 +59,12 @@ const HeroBackground = () => (
     >
       <defs>
         <linearGradient id="hero-edge" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="hsl(199 89% 48%)" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="hsl(186 90% 60%)" stopOpacity="0.15" />
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.65" />
+          <stop offset="100%" stopColor="hsl(var(--gradient-accent))" stopOpacity="0.2" />
         </linearGradient>
         <radialGradient id="hero-node">
-          <stop offset="0%" stopColor="hsl(186 95% 75%)" />
-          <stop offset="100%" stopColor="hsl(199 89% 48%)" />
+          <stop offset="0%" stopColor="hsl(var(--gradient-accent))" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" />
         </radialGradient>
       </defs>
 

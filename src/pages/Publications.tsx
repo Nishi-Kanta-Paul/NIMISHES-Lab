@@ -141,7 +141,7 @@ const sections: Section[] = [
       {
         title:
           "CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation",
-        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Camila Gonzalez",
+        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Camila González",
         venue: "WACV Workshop",
         venueNote: "Target venue - manuscript in preparation",
         domain: "Medical Imaging - Endoscopy",
@@ -210,9 +210,9 @@ const sections: Section[] = [
 ];
 
 const statusStyles: Record<Status, string> = {
-  Accepted: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  Accepted: "bg-emerald-500/10 text-emerald-700 border-emerald-600/30 dark:text-emerald-400 dark:border-emerald-500/20",
   "Under Review": "bg-primary/10 text-primary border-primary/20",
-  "In Preparation": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
+  "In Preparation": "bg-amber-500/10 text-amber-700 border-amber-600/30 dark:text-yellow-400 dark:border-yellow-500/20",
 };
 
 const stats = [

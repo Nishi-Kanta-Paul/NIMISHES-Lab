@@ -40,10 +40,10 @@ const trackRecord = [
     detail: "AWEF-Net and PDGuard, submitted to the 29th IEEE ICCIT 2026.",
   },
   {
-    label: "Journal manuscripts in preparation",
-    value: "3 papers",
+    label: "Manuscripts in preparation",
+    value: "4 papers",
     detail:
-      "Anomaly-Aware ForensiBlock, BGD-SF PolySegNet, and LCM-UNet, targeting September 2026 submission.",
+      "Anomaly-Aware ForensiBlock, BGD-SF PolySegNet, and LCM-UNet targeting September 2026 journal submission, plus CoMAF-Polyp for a WACV workshop.",
   },
 ];
 

@@ -6,7 +6,6 @@ import {
   Github,
   Globe,
   GraduationCap,
-  Users,
   Handshake,
   UserRound,
   type LucideIcon,
@@ -43,8 +42,10 @@ const founder: Member = {
   papers: ["SleepEffFormer", "BGD-SF PolySegNet", "LCM-UNet", "ForensiBlock", "WaveFoG", "CoMAF-Polyp"],
   links: {
     email: "nishikantapaul108@gmail.com",
+    scholar: "https://scholar.google.com/citations?user=tn-UPUAAAAAJ&hl=en",
     linkedin: "https://www.linkedin.com/in/nishi-kanta-paul-4251351b8/",
     github: "https://github.com/Nishi-Kanta-Paul",
+    website: "https://nishi-kanta-paul.github.io/",
   },
 };
 
@@ -67,30 +68,12 @@ const groups: Group[] = [
         name: "Md Shihabul Islam Shovo",
         role: "Lead Researcher",
         affiliation: "Ahsanullah University of Science and Technology",
+        image: "/Profile/Shovo.png",
         papers: ["WaveFoG", "LCM-UNet", "SleepEffFormer", "CoMAF-Polyp"],
         links: {
           email: "shihabul900@gmail.com",
           github: "https://github.com/Shihabul-Shuvo",
         },
-      },
-      {
-        name: "Farhana Hossain Swarnali",
-        role: "Lead Researcher",
-        affiliation: "PhD Student, University of Utah",
-      },
-    ],
-  },
-  {
-    title: "Research Assistants",
-    icon: Users,
-    blurb: "Supporting experiments, data pipelines, and reproducibility across active projects.",
-    columns: "sm:grid-cols-2",
-    members: [
-      { name: "Vaskor Debnath Aninda", role: "Research Assistant", affiliation: "Brac University" },
-      {
-        name: "Sudeepta Chandra Paul",
-        role: "Research Assistant",
-        affiliation: "Ahsanullah University of Science and Technology",
       },
     ],
   },
@@ -101,9 +84,22 @@ const groups: Group[] = [
     columns: "sm:grid-cols-2 lg:grid-cols-3",
     members: [
       {
+        name: "Camila Gonz\u00e1lez",
+        role: "Assistant Professor (Tenure-Track) & PI, RIIC Lab",
+        affiliation:
+          "Dept. of Anesthesia, Intensive Care Medicine, and Pain Medicine, Medical University of Vienna, Austria",
+        image: "/Profile/ProfCamila.png",
+        bio: "Principal Investigator of the Representational Intelligence for Intensive Care (RIIC) lab, building machine learning for intensive care and perioperative medicine. PhD at TU Darmstadt and postdoctoral research at Stanford on dynamic learning and monitoring for clinical settings with ongoing data collection. Recipient of the MICCAI Young Scientist Award and the Fran\u00e7ois Erbsmann Award at IPMI; Career Development & Student Chair for MICCAI 2026 and a board member of ContinualAI.",
+        papers: ["CoMAF-Polyp"],
+        links: {
+          scholar: "https://scholar.google.com/citations?user=VbpLc7YAAAAJ&hl=en",
+        },
+      },
+      {
         name: "Kishor Morol",
-        role: "Founder & Research Scientist",
-        affiliation: "ELITE Research Lab, New York",
+        role: "AI Safety Researcher",
+        affiliation: "Meta, New York, United States",
+        image: "/Profile/KishorMorol.png",
         papers: ["LCM-UNet"],
         links: {
           scholar: "https://scholar.google.com/citations?user=pjn3jg4AAAAJ&hl=en",
@@ -115,22 +111,18 @@ const groups: Group[] = [
         name: "Asma Jodeiri Akbarfam",
         role: "Assistant Professor",
         affiliation: "Washington State University",
+        image: "/Profile/ProfAsma.png",
         papers: ["ForensiBlock"],
         links: {
-          scholar: "https://scholar.google.com/citations?hl=en&user=i87DIwIAAAAJ",
+          scholar: "https://scholar.google.com/citations?user=i87DIwIAAAAJ&hl=en",
           website: "https://dblp.org/pid/344/1938.html",
         },
-      },
-      {
-        name: "Camila Gonzalez",
-        affiliation:
-          "Dept. of Anesthesia, Intensive Care Medicine, and Pain Medicine, Medical University of Vienna, Austria",
-        papers: ["CoMAF-Polyp"],
       },
       {
         name: "Shereen Ismail",
         role: "Research Scientist",
         affiliation: "Merit Network, University of Michigan",
+        image: "/Profile/DrShereen.png",
         papers: ["ForensiBlock"],
         links: {
           scholar: "https://scholar.google.com/citations?user=zlzGrwIAAAAJ&hl=en",
@@ -192,7 +184,7 @@ const Avatar = ({ member, size = "md" }: { member: Member; size?: "md" | "lg" })
     />
   ) : (
     <div
-      className={`${dim} rounded-full shrink-0 bg-gradient-to-br from-primary/20 to-cyan-300/10 border border-primary/20 text-primary flex items-center justify-center font-heading font-semibold`}
+      className={`${dim} rounded-full shrink-0 bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20 text-primary flex items-center justify-center font-heading font-semibold`}
     >
       {getInitials(member.name)}
     </div>
@@ -261,7 +253,7 @@ const People = () => (
               </div>
               <p className="text-sm text-muted-foreground mb-6">{group.blurb}</p>
 
-              <div className={`grid grid-cols-1 ${group.columns} gap-5`}>
+              <div className={`grid grid-cols-1 items-start ${group.columns} gap-5`}>
                 {group.members.map((member, i) => (
                   <motion.div
                     key={member.name}
@@ -269,7 +261,9 @@ const People = () => (
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.45, delay: i * 0.06 }}
-                    className="p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors"
+                    className={`p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors ${
+                      member.bio ? "sm:col-span-2" : ""
+                    }`}
                   >
                     <div className="flex items-start gap-4">
                       <Avatar member={member} />
@@ -278,6 +272,9 @@ const People = () => (
                         {member.role && <p className="text-xs text-primary mt-0.5">{member.role}</p>}
                         {member.affiliation && (
                           <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{member.affiliation}</p>
+                        )}
+                        {member.bio && (
+                          <p className="text-xs text-muted-foreground mt-3 leading-relaxed">{member.bio}</p>
                         )}
                         <PaperTags papers={member.papers} />
                         <ProfileLinks links={member.links} name={member.name} />

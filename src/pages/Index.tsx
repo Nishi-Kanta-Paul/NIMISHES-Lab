@@ -112,9 +112,9 @@ const publications = [
 ];
 
 const pubStatusColors: Record<string, string> = {
-  Accepted: "bg-emerald-500/10 text-emerald-400",
+  Accepted: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
   "Under Review": "bg-primary/10 text-primary",
-  "In Preparation": "bg-yellow-500/10 text-yellow-400",
+  "In Preparation": "bg-amber-500/10 text-amber-700 dark:text-yellow-400",
 };
 
 const impact = [
@@ -171,7 +171,7 @@ const Index = () => (
     </section>
 
     {/* Impact strip */}
-    <section className="py-12 border-y border-border bg-card/30">
+    <section className="py-12 border-y border-border bg-muted/40">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {impact.map((s, i) => (
@@ -206,7 +206,7 @@ const Index = () => (
     </section>
 
     {/* Selected Publications */}
-    <section className="py-20 bg-card/30">
+    <section className="py-20 bg-muted/40">
       <div className="container mx-auto px-4">
         <SectionHeading
           title="Selected Publications"
@@ -277,7 +277,7 @@ const Index = () => (
     </section>
 
     {/* CTA */}
-    <section className="py-20 bg-card/30">
+    <section className="py-20 bg-muted/40">
       <div className="container mx-auto px-4 text-center">
         <motion.div {...fadeUp}>
           <Users className="h-12 w-12 text-primary mx-auto mb-4" />

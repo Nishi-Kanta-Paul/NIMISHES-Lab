@@ -6,8 +6,8 @@ import SectionHeading from "@/components/SectionHeading";
 const updates = [
   {
     date: "September 2026",
-    title: "Three journal manuscripts in preparation",
-    desc: "Anomaly-Aware ForensiBlock, BGD-SF PolySegNet, and LCM-UNet are being finalised for journal submission this month, spanning explainable anomaly detection, boundary-guided segmentation, and ultralight state-space architectures.",
+    title: "Four manuscripts in preparation",
+    desc: "Anomaly-Aware ForensiBlock, BGD-SF PolySegNet, and LCM-UNet are being finalised for journal submission this month, alongside CoMAF-Polyp, a semi-supervised polyp segmentation study with the Medical University of Vienna targeting a WACV workshop.",
   },
   {
     date: "August 2026",
