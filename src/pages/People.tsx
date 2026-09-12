@@ -92,12 +92,14 @@ const groups: Group[] = [
         image: "/Profile/ProfCamila.png",
         links: {
           scholar: "https://scholar.google.com/citations?user=VbpLc7YAAAAJ&hl=en",
+          website: "https://riic.ai/",
         },
       },
       {
         name: "Kishor Morol",
-        role: "AI Safety Researcher \u00b7 Founder, ELITE Research Lab",
-        affiliation: "Meta, New York, United States",
+        role: "AI Safety Researcher, Meta",
+        affiliation: "Founder, ELITE Research Lab",
+        location: "New York, United States",
         image: "/Profile/KishorMorol.png",
         links: {
           scholar: "https://scholar.google.com/citations?user=pjn3jg4AAAAJ&hl=en",
@@ -254,6 +256,9 @@ const People = () => (
                         {member.role && <p className="text-xs text-primary mt-0.5">{member.role}</p>}
                         {member.affiliation && (
                           <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{member.affiliation}</p>
+                        )}
+                        {member.location && (
+                          <p className="text-xs text-muted-foreground/80 mt-0.5">{member.location}</p>
                         )}
                         <div className="mt-auto">
                           <ProfileLinks links={member.links} name={member.name} />

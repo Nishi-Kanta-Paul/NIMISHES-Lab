@@ -61,14 +61,16 @@ const sections: Section[] = [
       {
         title:
           "DR-LiteNet: A Lightweight Explainable Hybrid CNN Framework for Imbalanced Diabetic Retinopathy Grading via Adaptive SMOTE Fusion",
-        authors: "NIMISHES Lab",
+        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Audrija Chowdhury, Israt Jahan Esha",
         venue:
           "1st Int. Conf. on Next-Generation Electrical & Electronics, Computer Systems, and Technologies (iCONEECT 2026)",
+        venueNote: "Premier University, Chittagong, Bangladesh - 25-26 September 2026",
         domain: "Medical Imaging - Ophthalmology",
         summary:
-          "A dual-branch network that fuses 1,280-d EfficientNetB0 features with a 52-d handcrafted lesion descriptor (vessel density, exudate intensity, texture entropy, HSV histograms), then applies ADASYN in feature space to correct five-grade class imbalance without touching the images.",
+          "A dual-branch network that fuses 1,280-d EfficientNetB0 features with a 51-d handcrafted lesion descriptor (vessel density, exudate intensity, texture entropy, HSV histograms) into a 1,331-d hybrid embedding, then applies ADASYN in feature space to correct five-grade class imbalance without touching the images.",
         keywords: ["Diabetic retinopathy", "Class imbalance", "ADASYN", "EfficientNet", "Grad-CAM", "Explainable AI"],
         pdf: "/papers/DR-LiteNet.pdf",
+        code: "https://github.com/Nishi-Kanta-Paul/DR-LiteNet",
       },
     ],
   },
