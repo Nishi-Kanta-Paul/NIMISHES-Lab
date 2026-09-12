@@ -117,7 +117,7 @@ const Index = () => (
               key={area.title}
               {...fadeUp}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-6 rounded-xl bg-card border border-border hover:border-primary/30 hover:glow-border transition-all group"
+              className="p-6 rounded-xl bg-card border border-border card-interactive group"
             >
               <area.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-heading font-semibold text-lg mb-2">{area.title}</h3>
@@ -143,7 +143,7 @@ const Index = () => (
               key={i}
               {...fadeUp}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="flex gap-4 items-start p-4 rounded-lg bg-card border border-border"
+              className="flex gap-4 items-start p-4 rounded-lg bg-card border border-border card-interactive"
             >
               <Newspaper className="h-5 w-5 text-primary mt-0.5 shrink-0" />
               <div>

@@ -138,7 +138,7 @@ const Research = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="p-6 rounded-xl bg-card border border-border hover:border-primary/20 transition-colors"
+              className="p-6 rounded-xl bg-card border border-border card-interactive"
             >
               <div className="flex items-start gap-4">
                 <a.icon className="h-8 w-8 text-primary shrink-0 mt-1" />
@@ -194,12 +194,12 @@ const Research = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="p-6 rounded-xl bg-card border border-border hover:border-primary/20 transition-colors"
+                className="p-6 rounded-xl bg-card border border-border card-interactive"
               >
                 <m.icon className="h-7 w-7 text-primary mb-3" />
                 <h4 className="font-heading font-semibold mb-2">{m.title}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
-                <p className="text-xs text-muted-foreground/80 mt-3 pt-3 border-t border-border leading-relaxed">
+                <p className="text-sm text-muted-foreground mt-3 pt-3 border-t border-border leading-relaxed">
                   {m.evidence}
                 </p>
               </motion.div>

@@ -192,10 +192,10 @@ const Publications = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="p-5 rounded-xl bg-card border border-border text-center"
+              className="p-5 rounded-xl bg-card border border-border text-center card-interactive"
             >
               <p className="font-heading text-3xl font-bold gradient-text">{s.value}</p>
-              <p className="text-xs text-muted-foreground mt-1 leading-snug">{s.label}</p>
+              <p className="text-sm text-muted-foreground mt-1 leading-snug">{s.label}</p>
             </motion.div>
           ))}
         </div>
@@ -218,7 +218,7 @@ const Publications = () => (
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className="p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors"
+                    className="p-6 rounded-xl bg-card border border-border card-interactive"
                   >
                     <div className="flex flex-wrap items-center gap-2 mb-3">
                       <span className={`text-xs font-medium px-2 py-1 rounded border ${statusStyles[section.status]}`}>
@@ -229,18 +229,18 @@ const Publications = () => (
 
                     <h4 className="font-heading font-semibold text-lg leading-snug">{p.title}</h4>
 
-                    <p className="text-xs text-muted-foreground mt-2 flex items-start gap-1.5">
+                    <p className="text-sm text-muted-foreground mt-2 flex items-start gap-1.5">
                       <Users2 size={13} className="mt-0.5 shrink-0" />
                       {p.authors}
                     </p>
-                    <p className="text-xs text-primary mt-1">{p.venue}</p>
-                    {p.venueNote && <p className="text-xs text-muted-foreground mt-0.5">{p.venueNote}</p>}
+                    <p className="text-sm text-primary mt-1">{p.venue}</p>
+                    {p.venueNote && <p className="text-sm text-muted-foreground mt-0.5">{p.venueNote}</p>}
 
                     <p className="text-sm text-muted-foreground leading-relaxed mt-4">{p.summary}</p>
 
                     <div className="flex flex-wrap gap-1.5 mt-4">
                       {p.keywords.map((k) => (
-                        <span key={k} className="text-[11px] px-2 py-0.5 rounded-full bg-secondary text-muted-foreground">
+                        <span key={k} className="text-xs px-2 py-0.5 rounded-full bg-secondary text-muted-foreground">
                           {k}
                         </span>
                       ))}
@@ -282,7 +282,7 @@ const Publications = () => (
           ))}
         </div>
 
-        <p className="max-w-4xl mx-auto text-xs text-muted-foreground mt-12 text-center">
+        <p className="max-w-4xl mx-auto text-sm text-muted-foreground mt-12 text-center">
           Manuscripts under review are shared as author preprints for review purposes and may differ from the final
           published versions. Manuscripts in preparation are not distributed publicly - write to{" "}
           <a href={`mailto:${LAB_EMAIL}`} className="text-primary hover:underline">

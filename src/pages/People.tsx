@@ -207,7 +207,7 @@ const People = () => (
           transition={{ duration: 0.5 }}
           className="max-w-5xl mx-auto mb-16"
         >
-          <div className="relative p-8 rounded-2xl bg-card border border-border overflow-hidden">
+          <div className="relative p-8 rounded-2xl bg-card border border-border overflow-hidden card-interactive">
             <div
               className="absolute inset-0 opacity-60 pointer-events-none"
               style={{
@@ -221,7 +221,7 @@ const People = () => (
                 <h3 className="font-heading font-bold text-2xl">{founder.name}</h3>
                 <p className="text-primary text-sm font-medium mt-1">{founder.role}</p>
                 <p className="text-sm text-muted-foreground">{founder.affiliation}</p>
-                {founder.location && <p className="text-xs text-muted-foreground mt-0.5">{founder.location}</p>}
+                {founder.location && <p className="text-sm text-muted-foreground mt-0.5">{founder.location}</p>}
                 <ProfileLinks links={founder.links} name={founder.name} />
               </div>
             </div>
@@ -247,18 +247,18 @@ const People = () => (
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.45, delay: i * 0.06 }}
-                    className="p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors h-full"
+                    className="p-5 rounded-xl bg-card border border-border card-interactive h-full"
                   >
                     <div className="flex items-start gap-4 h-full">
                       <Avatar member={member} />
                       <div className="min-w-0 flex-1 flex flex-col self-stretch">
                         <p className="font-heading font-semibold leading-snug">{member.name}</p>
-                        {member.role && <p className="text-xs text-primary mt-0.5">{member.role}</p>}
+                        {member.role && <p className="text-sm text-primary mt-0.5">{member.role}</p>}
                         {member.affiliation && (
-                          <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{member.affiliation}</p>
+                          <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">{member.affiliation}</p>
                         )}
                         {member.location && (
-                          <p className="text-xs text-muted-foreground/80 mt-0.5">{member.location}</p>
+                          <p className="text-sm text-muted-foreground mt-0.5">{member.location}</p>
                         )}
                         <div className="mt-auto">
                           <ProfileLinks links={member.links} name={member.name} />
@@ -272,7 +272,7 @@ const People = () => (
           ))}
         </div>
 
-        <p className="max-w-5xl mx-auto text-xs text-muted-foreground mt-14 text-center">
+        <p className="max-w-5xl mx-auto text-sm text-muted-foreground mt-14 text-center">
           Interested in joining or collaborating? See{" "}
           <Link to="/join" className="text-primary hover:underline">
             Join Us

@@ -76,16 +76,16 @@ const News = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="flex gap-4 p-5 rounded-xl bg-card border border-border"
+              className="flex gap-4 p-5 rounded-xl bg-card border border-border card-interactive"
             >
               <style.icon className={`h-5 w-5 mt-0.5 shrink-0 ${style.icon_color}`} />
               <div>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className={`text-[11px] font-medium px-2 py-0.5 rounded border ${style.badge}`}>{u.kind}</span>
-                  <span className="text-xs text-muted-foreground">{u.date}</span>
+                  <span className="text-sm text-muted-foreground">{u.date}</span>
                 </div>
-                <h3 className="font-heading font-semibold text-sm mt-1.5">{u.title}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{u.desc}</p>
+                <h3 className="font-heading font-semibold text-base mt-1.5">{u.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1">{u.desc}</p>
               </div>
             </motion.div>
             );

@@ -70,7 +70,7 @@ const Resources = () => (
               </h3>
               <div className="space-y-3">
                 {s.items.map((item) => (
-                  <a key={item.name} href={item.link} target="_blank" rel="noreferrer" className="block p-4 rounded-lg bg-card border border-border hover:border-primary/30 transition-colors group">
+                  <a key={item.name} href={item.link} target="_blank" rel="noreferrer" className="block p-4 rounded-lg bg-card border border-border card-interactive group">
                     <div className="flex items-center justify-between">
                       <p className="font-medium text-sm group-hover:text-primary transition-colors">{item.name}</p>
                       <ExternalLink size={14} className="text-muted-foreground" />

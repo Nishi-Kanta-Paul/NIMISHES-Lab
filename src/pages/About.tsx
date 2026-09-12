@@ -40,7 +40,7 @@ const About = () => (
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex gap-5 p-6 rounded-xl bg-card border border-border"
+              className="flex gap-5 p-6 rounded-xl bg-card border border-border card-interactive"
             >
               <s.icon className="h-8 w-8 text-primary shrink-0 mt-1" />
               <div>

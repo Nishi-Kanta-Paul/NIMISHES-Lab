@@ -21,12 +21,12 @@ const Contact = () => {
               transition={{ duration: 0.5 }}
               className="space-y-6"
             >
-              <div className="p-6 rounded-xl bg-card border border-border">
+              <div className="p-6 rounded-xl bg-card border border-border card-interactive">
                 <Mail className="h-6 w-6 text-primary mb-3" />
                 <h3 className="font-heading font-semibold mb-1">Email</h3>
                 <a href="mailto:nimisheslab72@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">nimisheslab72@gmail.com</a>
               </div>
-              <div className="p-6 rounded-xl bg-card border border-border">
+              <div className="p-6 rounded-xl bg-card border border-border card-interactive">
                 <MapPin className="h-6 w-6 text-primary mb-3" />
                 <h3 className="font-heading font-semibold mb-1">Location</h3>
                 <p className="text-sm text-muted-foreground">Bangladesh  Remote Research Lab</p>

@@ -35,7 +35,7 @@ const Join = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="p-6 rounded-xl bg-card border border-border"
+                  className="p-6 rounded-xl bg-card border border-border card-interactive"
                 >
                   <r.icon className="h-8 w-8 text-primary mb-3" />
                   <h3 className="font-heading font-semibold text-lg mb-2">{r.title}</h3>
@@ -50,7 +50,7 @@ const Join = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="p-6 rounded-xl bg-card border border-border"
+              className="p-6 rounded-xl bg-card border border-border card-interactive"
             >
               <h3 className="font-heading font-semibold text-lg mb-4">Apply / Get in Touch</h3>
               {state.succeeded ? (

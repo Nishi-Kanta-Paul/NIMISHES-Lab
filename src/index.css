@@ -6,7 +6,7 @@
 
 @layer base {
   /* Light is the default theme. Every value below is contrast-checked against
-     --background / --card: body text >= 16:1, muted text >= 8.7:1, primary >= 4.9:1.
+     --background / --card: body text >= 16:1, muted text >= 11.4:1, primary >= 4.9:1.
      The dark palette lives in .dark and is toggled by adding that class to <html>. */
   :root {
     --background: 0 0% 100%;
@@ -26,7 +26,7 @@
     --secondary-foreground: 222 32% 11%;
 
     --muted: 214 32% 95%;
-    --muted-foreground: 216 22% 30%;
+    --muted-foreground: 216 25% 22%;
 
     --accent: 199 92% 34%;
     --accent-foreground: 0 0% 100%;
@@ -51,6 +51,7 @@
 
     --glow: 199 92% 40%;
     --gradient-accent: 190 85% 36%;
+    --card-hover-shadow: 0 12px 28px -14px hsl(216 40% 22% / 0.30), 0 3px 8px -4px hsl(216 30% 22% / 0.12);
     --hero-mesh-strength: 0.5;
   }
 
@@ -71,7 +72,7 @@
     --secondary-foreground: 210 40% 92%;
 
     --muted: 220 18% 14%;
-    --muted-foreground: 214 20% 72%;
+    --muted-foreground: 214 22% 82%;
 
     --accent: 199 89% 48%;
     --accent-foreground: 220 25% 6%;
@@ -94,6 +95,7 @@
 
     --glow: 199 89% 48%;
     --gradient-accent: 186 95% 70%;
+    --card-hover-shadow: 0 12px 30px -14px hsl(var(--primary) / 0.35), 0 0 0 1px hsl(var(--primary) / 0.12);
     --hero-mesh-strength: 1;
   }
 }
@@ -140,5 +142,34 @@
 
   .section-fade.visible {
     @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer components {
+  /* Shared card hover: a small lift, a brand-tinted shadow, and a warmer border.
+     Only transform/box-shadow/border-color animate, so it stays cheap to paint. */
+  .card-interactive {
+    @apply transition-[transform,box-shadow,border-color] duration-200 ease-out;
+  }
+
+  .card-interactive:hover {
+    @apply border-primary/40;
+    transform: translateY(-3px);
+    box-shadow: var(--card-hover-shadow);
+  }
+
+  /* Anything clickable also gets a visible keyboard focus ring. */
+  a.card-interactive:focus-visible,
+  button.card-interactive:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-interactive {
+      @apply transition-none;
+    }
+    .card-interactive:hover {
+      transform: none;
+    }
   }
 }
