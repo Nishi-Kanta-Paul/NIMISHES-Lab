@@ -5,6 +5,8 @@ import {
   Linkedin,
   Github,
   Globe,
+  Facebook,
+  FileText,
   GraduationCap,
   Handshake,
   UserRound,
@@ -19,6 +21,8 @@ type Links = {
   scholar?: string;
   github?: string;
   website?: string;
+  facebook?: string;
+  cv?: string;
 };
 
 type Member = {
@@ -28,7 +32,6 @@ type Member = {
   location?: string;
   image?: string;
   bio?: string;
-  papers?: string[];
   links?: Links;
 };
 
@@ -39,7 +42,6 @@ const founder: Member = {
   location: "Dhaka, Bangladesh",
   image: "/Profile/Nishi.jpeg",
   bio: "Founded NIMISHES Lab in 2026 to work on efficient, explainable deep learning for high-stakes decisions. Lead or co-author on nine manuscripts spanning computer vision, signal modelling, and trustworthy AI, with work accepted at IEEE BECITHCON 2026 and iCONEECT 2026.",
-  papers: ["SleepEffFormer", "BGD-SF PolySegNet", "LCM-UNet", "ForensiBlock", "WaveFoG", "CoMAF-Polyp"],
   links: {
     email: "nishikantapaul108@gmail.com",
     scholar: "https://scholar.google.com/citations?user=tn-UPUAAAAAJ&hl=en",
@@ -69,10 +71,14 @@ const groups: Group[] = [
         role: "Lead Researcher",
         affiliation: "Ahsanullah University of Science and Technology",
         image: "/Profile/Shovo.png",
-        papers: ["WaveFoG", "LCM-UNet", "SleepEffFormer", "CoMAF-Polyp"],
         links: {
           email: "shihabul900@gmail.com",
-          github: "https://github.com/Shihabul-Shuvo",
+          scholar: "https://scholar.google.com/citations?user=qg1UAcYAAAAJ&hl=en",
+          linkedin: "https://www.linkedin.com/in/shihabul-islam-shovo/",
+          github: "https://github.com/Shihabul-Shuvo/",
+          website: "https://shihabul-shuvo.github.io/",
+          facebook: "https://www.facebook.com/shihabul.shovo",
+          cv: "https://shihabul-shuvo.github.io/Portfolio-shihabul/Resume/MD-SHIHABUL-ISLAM-SHOVO.pdf",
         },
       },
     ],
@@ -81,7 +87,7 @@ const groups: Group[] = [
     title: "Collaborators & Co-authors",
     icon: UserRound,
     blurb: "Researchers across four institutions in the United States and Austria who have co-authored our work.",
-    columns: "sm:grid-cols-2 lg:grid-cols-3",
+    columns: "sm:grid-cols-2",
     members: [
       {
         name: "Camila Gonz\u00e1lez",
@@ -89,18 +95,16 @@ const groups: Group[] = [
         affiliation:
           "Dept. of Anesthesia, Intensive Care Medicine, and Pain Medicine, Medical University of Vienna, Austria",
         image: "/Profile/ProfCamila.png",
-        bio: "Principal Investigator of the Representational Intelligence for Intensive Care (RIIC) lab, building machine learning for intensive care and perioperative medicine. PhD at TU Darmstadt and postdoctoral research at Stanford on dynamic learning and monitoring for clinical settings with ongoing data collection. Recipient of the MICCAI Young Scientist Award and the Fran\u00e7ois Erbsmann Award at IPMI; Career Development & Student Chair for MICCAI 2026 and a board member of ContinualAI.",
-        papers: ["CoMAF-Polyp"],
+        bio: "PI of the Representational Intelligence for Intensive Care (RIIC) lab, working on machine learning for intensive care and perioperative medicine. PhD at TU Darmstadt; postdoctoral research at Stanford. MICCAI Young Scientist and IPMI Fran\u00e7ois Erbsmann awardee, and Career Development & Student Chair for MICCAI 2026.",
         links: {
           scholar: "https://scholar.google.com/citations?user=VbpLc7YAAAAJ&hl=en",
         },
       },
       {
         name: "Kishor Morol",
-        role: "AI Safety Researcher",
+        role: "AI Safety Researcher \u00b7 Founder, ELITE Research Lab",
         affiliation: "Meta, New York, United States",
         image: "/Profile/KishorMorol.png",
-        papers: ["LCM-UNet"],
         links: {
           scholar: "https://scholar.google.com/citations?user=pjn3jg4AAAAJ&hl=en",
           linkedin: "https://www.linkedin.com/in/kishormorol/",
@@ -112,7 +116,6 @@ const groups: Group[] = [
         role: "Assistant Professor",
         affiliation: "Washington State University",
         image: "/Profile/ProfAsma.png",
-        papers: ["ForensiBlock"],
         links: {
           scholar: "https://scholar.google.com/citations?user=i87DIwIAAAAJ&hl=en",
           website: "https://dblp.org/pid/344/1938.html",
@@ -123,7 +126,6 @@ const groups: Group[] = [
         role: "Research Scientist",
         affiliation: "Merit Network, University of Michigan",
         image: "/Profile/DrShereen.png",
-        papers: ["ForensiBlock"],
         links: {
           scholar: "https://scholar.google.com/citations?user=zlzGrwIAAAAJ&hl=en",
           linkedin: "https://www.linkedin.com/in/shereen-ismail-phd-49b35415/",
@@ -147,6 +149,8 @@ const linkConfig: { key: keyof Links; icon: LucideIcon; label: string; href: (v:
   { key: "scholar", icon: GraduationCap, label: "Google Scholar", href: (v) => v },
   { key: "github", icon: Github, label: "GitHub", href: (v) => v },
   { key: "website", icon: Globe, label: "Website", href: (v) => v },
+  { key: "facebook", icon: Facebook, label: "Facebook", href: (v) => v },
+  { key: "cv", icon: FileText, label: "CV", href: (v) => v },
 ];
 
 const ProfileLinks = ({ links, name }: { links?: Links; name: string }) => {
@@ -191,17 +195,6 @@ const Avatar = ({ member, size = "md" }: { member: Member; size?: "md" | "lg" })
   );
 };
 
-const PaperTags = ({ papers }: { papers?: string[] }) =>
-  papers?.length ? (
-    <div className="flex flex-wrap gap-1.5 mt-3">
-      {papers.map((p) => (
-        <span key={p} className="text-[11px] px-2 py-0.5 rounded-full bg-secondary text-muted-foreground">
-          {p}
-        </span>
-      ))}
-    </div>
-  ) : null;
-
 const People = () => (
   <Layout>
     <section className="py-20">
@@ -235,7 +228,6 @@ const People = () => (
                 <p className="text-sm text-muted-foreground">{founder.affiliation}</p>
                 {founder.location && <p className="text-xs text-muted-foreground mt-0.5">{founder.location}</p>}
                 <p className="text-sm text-muted-foreground leading-relaxed mt-4 max-w-2xl">{founder.bio}</p>
-                <PaperTags papers={founder.papers} />
                 <ProfileLinks links={founder.links} name={founder.name} />
               </div>
             </div>
@@ -253,7 +245,7 @@ const People = () => (
               </div>
               <p className="text-sm text-muted-foreground mb-6">{group.blurb}</p>
 
-              <div className={`grid grid-cols-1 items-start ${group.columns} gap-5`}>
+              <div className={`grid grid-cols-1 ${group.columns} gap-5`}>
                 {group.members.map((member, i) => (
                   <motion.div
                     key={member.name}
@@ -261,13 +253,11 @@ const People = () => (
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.45, delay: i * 0.06 }}
-                    className={`p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors ${
-                      member.bio ? "sm:col-span-2" : ""
-                    }`}
+                    className="p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors h-full"
                   >
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-4 h-full">
                       <Avatar member={member} />
-                      <div className="min-w-0 flex-1">
+                      <div className="min-w-0 flex-1 flex flex-col self-stretch">
                         <p className="font-heading font-semibold leading-snug">{member.name}</p>
                         {member.role && <p className="text-xs text-primary mt-0.5">{member.role}</p>}
                         {member.affiliation && (
@@ -276,8 +266,9 @@ const People = () => (
                         {member.bio && (
                           <p className="text-xs text-muted-foreground mt-3 leading-relaxed">{member.bio}</p>
                         )}
-                        <PaperTags papers={member.papers} />
-                        <ProfileLinks links={member.links} name={member.name} />
+                        <div className="mt-auto">
+                          <ProfileLinks links={member.links} name={member.name} />
+                        </div>
                       </div>
                     </div>
                   </motion.div>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Network, Cpu, Eye, Activity, Lightbulb, Scale, ShieldCheck, FlaskConical, ArrowRight, Newspaper, Users, FileText, Mail } from "lucide-react";
+import { Network, Cpu, Eye, Lightbulb, ArrowRight, Newspaper, Users, FileText } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import HeroBackground from "@/components/HeroBackground";
@@ -9,50 +9,28 @@ const researchAreas = [
   {
     icon: Network,
     title: "Deep Learning Architectures",
-    desc: "Convolutional, recurrent, Transformer, and state-space models, with attention, gating, and multi-branch fusion for combining heterogeneous representations.",
+    desc: "CNNs, Transformers, and state-space models, combined through attention, gating, and multi-branch fusion.",
   },
   {
     icon: Cpu,
     title: "Efficient & Edge AI",
-    desc: "Models built under hard parameter, latency, and FLOP budgets  structural reparameterization and compact design for CPUs and edge hardware.",
+    desc: "Models built under hard parameter, latency, and FLOP budgets so they run on CPUs and edge hardware.",
   },
   {
     icon: Eye,
-    title: "Computer Vision",
-    desc: "Classification, segmentation, and dense prediction, including boundary-aware segmentation, multi-scale context, and input-adaptive ensembles.",
-  },
-  {
-    icon: Activity,
-    title: "Time-Series & Signal Intelligence",
-    desc: "Sequential and sensor modelling with wavelet and spectral representations, temporal context, and subject-independent evaluation.",
+    title: "Vision & Signal Intelligence",
+    desc: "Segmentation and classification on medical images, alongside EEG, IMU, and other sensor streams.",
   },
   {
     icon: Lightbulb,
     title: "Explainable & Trustworthy AI",
-    desc: "Gradient- and game-theoretic attribution, attention analysis, and honest reporting  so predictions can be inspected and defended.",
-  },
-  {
-    icon: Scale,
-    title: "Imbalanced & Data-Efficient Learning",
-    desc: "Long-tailed and label-scarce data as a first-class problem: feature-space resampling, cost-sensitive objectives, and metrics that resist majority-class bias.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Secure & Intelligent Data Systems",
-    desc: "Anomaly detection, behavioral monitoring, and privacy-aware infrastructure with tamper-evident logging and verifiable auditing.",
-  },
-  {
-    icon: FlaskConical,
-    title: "Rigorous Evaluation & Reproducibility",
-    desc: "Experimental design as part of the contribution: disjoint splits, external datasets, significance testing with effect sizes, and shared baselines.",
+    desc: "Attribution, attention analysis, and honest evaluation so predictions can be inspected and defended.",
   },
 ];
 
 
 
 
-
-const LAB_EMAIL = "nimisheslab72@gmail.com";
 
 const news = [
   { date: "Sep 2026", text: "Four manuscripts in preparation: CoMAF-Polyp (WACV Workshop, with Medical University of Vienna), ForensiBlock, BGD-SF PolySegNet, and LCM-UNet" },
@@ -61,61 +39,6 @@ const news = [
   { date: "Jun 2026", text: "SleepEffFormer and WaveFoG accepted at IEEE BECITHCON 2026" },
   { date: "Apr 2026", text: "NIMISHES Lab officially launches as an independent research initiative" },
 ];
-
-const publications = [
-  {
-    title: "SleepEffFormer: Efficient CNN-Transformer with Transition-Aware Smoothing for Single-Channel EEG Sleep Stage Classification",
-    venue: "IEEE BECITHCON 2026",
-    status: "Accepted",
-    result: "83.9% accuracy, 78.9% macro-F1 with only ~367K parameters",
-    pdf: "/papers/SleepEffFormer.pdf",
-  },
-  {
-    title: "WaveFoG: Wavelet-Gated Transformer for Parkinson's Freezing of Gait Detection",
-    venue: "IEEE BECITHCON 2026",
-    status: "Accepted",
-    result: "F1 0.875 under subject-independent ten-fold cross-validation",
-    pdf: "/papers/WaveFoG.pdf",
-  },
-  {
-    title: "DR-LiteNet: Lightweight Explainable Hybrid CNN for Imbalanced Diabetic Retinopathy Grading",
-    venue: "iCONEECT 2026",
-    status: "Accepted",
-    result: "QWK 0.884 on APTOS 2019 with 4.69M parameters",
-    pdf: "/papers/DR-LiteNet.pdf",
-  },
-  {
-    title: "AWEF-Net: Attention-Weighted Ensemble Fusion for Multi-Class Pulmonary Disease Classification",
-    venue: "IEEE ICCIT 2026",
-    status: "Under Review",
-    result: "96.3% macro-F1 on the COVID-19 Radiography Database",
-    pdf: "/papers/AWEF-Net.pdf",
-  },
-  {
-    title: "BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion for Polyp Segmentation",
-    venue: "Journal manuscript",
-    status: "In Preparation",
-    result: "Dice 0.887 at 35 FPS, +34.6% ASSD over CNN baselines",
-  },
-  {
-    title: "LCM-UNet: Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation",
-    venue: "Journal manuscript",
-    status: "In Preparation",
-    result: "34,180 parameters and 0.06 GFLOPs after reparameterization",
-  },
-  {
-    title: "CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation",
-    venue: "WACV Workshop",
-    status: "In Preparation",
-    result: "Reliability-calibrated pseudo-label fusion, with Medical University of Vienna",
-  },
-];
-
-const pubStatusColors: Record<string, string> = {
-  Accepted: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
-  "Under Review": "bg-primary/10 text-primary",
-  "In Preparation": "bg-amber-500/10 text-amber-700 dark:text-yellow-400",
-};
 
 const impact = [
   { value: "9", label: "Manuscripts" },
@@ -185,10 +108,10 @@ const Index = () => (
     </section>
 
     {/* Research Areas */}
-    <section className="py-20">
+    <section id="research-areas" className="py-20 scroll-mt-16">
       <div className="container mx-auto px-4">
         <SectionHeading title="Research Areas" subtitle="The core areas of machine learning we work in, from architecture design to evaluation methodology" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {researchAreas.map((area, i) => (
             <motion.div
               key={area.title}
@@ -202,52 +125,9 @@ const Index = () => (
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
-
-    {/* Selected Publications */}
-    <section className="py-20 bg-muted/40">
-      <div className="container mx-auto px-4">
-        <SectionHeading
-          title="Selected Publications"
-          subtitle="Peer-reviewed and in-progress work across vision, signals, efficient architectures, and trustworthy AI  PDFs available, manuscripts in preparation on request"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {publications.map((p, i) => (
-            <motion.a
-              key={p.title}
-              href={p.pdf ?? `mailto:${LAB_EMAIL}?subject=${encodeURIComponent(`Manuscript request: ${p.title}`)}`}
-              target={p.pdf ? "_blank" : undefined}
-              rel="noreferrer"
-              {...fadeUp}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="flex flex-col p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors group"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className={`text-xs font-medium px-2 py-1 rounded ${pubStatusColors[p.status]}`}>{p.status}</span>
-                <span className="text-xs text-muted-foreground">{p.venue}</span>
-              </div>
-              <h3 className="font-heading font-semibold text-sm leading-snug group-hover:text-primary transition-colors">
-                {p.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mt-3 flex-1">{p.result}</p>
-              <span className="text-xs text-primary mt-4 inline-flex items-center gap-1">
-                {p.pdf ? (
-                  <>
-                    <FileText size={13} /> Read PDF
-                  </>
-                ) : (
-                  <>
-                    <Mail size={13} /> Request from authors
-                  </>
-                )}
-              </span>
-            </motion.a>
-          ))}
-        </div>
         <div className="text-center mt-8">
-          <Link to="/publications" className="text-primary hover:underline text-sm inline-flex items-center gap-1">
-            View all publications <ArrowRight size={14} />
+          <Link to="/research" className="text-primary hover:underline text-sm inline-flex items-center gap-1">
+            View all research areas <ArrowRight size={14} />
           </Link>
         </div>
       </div>
