@@ -35,8 +35,7 @@ type Member = {
 const founder: Member = {
   name: "Nishi Kanta Paul",
   role: "Founder & Research Lead",
-  affiliation: "Ahsanullah University of Science and Technology",
-  location: "Dhaka, Bangladesh",
+  affiliation: "NIMISHES Lab",
   image: "/Profile/Nishi.jpeg",
   links: {
     email: "nishikantapaul108@gmail.com",
@@ -65,7 +64,7 @@ const groups: Group[] = [
       {
         name: "Md Shihabul Islam Shovo",
         role: "Lead Researcher",
-        affiliation: "Ahsanullah University of Science and Technology",
+        affiliation: "NIMISHES Lab",
         image: "/Profile/Shovo.png",
         links: {
           email: "shihabul900@gmail.com",
