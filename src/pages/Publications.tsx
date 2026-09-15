@@ -10,6 +10,10 @@ type Paper = {
   authors: string;
   venue: string;
   venueNote?: string;
+  /** Journal quartile ranking, for journals only (conferences don't carry one). */
+  quartile?: "Q1" | "Q2" | "Q3" | "Q4";
+  /** Journal Impact Factor, e.g. "7.7". Shown as a badge alongside the quartile. */
+  impactFactor?: string;
   domain: string;
   summary: string;
   keywords: string[];
@@ -77,7 +81,7 @@ const sections: Section[] = [
   {
     status: "Under Review",
     icon: Clock,
-    blurb: "Submitted to the 29th IEEE International Conference on Computer and Information Technology (ICCIT 2026).",
+    blurb: "Submitted to IEEE conferences and peer-reviewed journals.",
     papers: [
       {
         title:
@@ -102,12 +106,49 @@ const sections: Section[] = [
         keywords: ["Parkinson's disease", "IMU", "CNN", "Bi-LSTM", "Attention", "Wearable health"],
         pdf: "/papers/PDGuard.pdf",
       },
+      {
+        title: "LCM-UNet: A Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation",
+        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Kishor Morol",
+        venue: "IEEE Journal of Biomedical and Health Informatics (JBHI)",
+        venueNote: "Submitted - under review",
+        quartile: "Q1",
+        impactFactor: "7.7",
+        domain: "Medical Imaging - Dermatology",
+        summary:
+          "Strengthens the local pathway of an ultra-compact state-space segmentation network with a zero-initialized dilated depthwise adapter that merges exactly into a single kernel after training - more capacity during learning, an unchanged graph at inference.",
+        keywords: ["Skin lesion segmentation", "State space model", "Mamba", "Structural reparameterization", "U-Net"],
+      },
+      {
+        title: "Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access",
+        authors: "Asma Jodeiri Akbarfam, Nishi Kanta Paul, Shereen Ismail",
+        venue: "IEEE Access",
+        venueNote: "Submitted - under review",
+        quartile: "Q1",
+        impactFactor: "4.2",
+        domain: "Blockchain Forensics - Explainable AI",
+        summary:
+          "Extends the RBAC-SA blockchain forensics model with real-time behavioral anomaly scoring, risk-adaptive response, asynchronous TreeSHAP explanations, and verifiable on-chain auditing - detecting insider misuse that static authorization cannot see.",
+        keywords: ["Behavioral anomaly detection", "Blockchain", "Digital forensics", "Insider threat", "TreeSHAP", "Smart contracts"],
+      },
+      {
+        title:
+          "BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images",
+        authors: "Nishi Kanta Paul, Shamia Maherin, Morsheda Akter",
+        venue: "PLOS ONE",
+        venueNote: "Submitted - under review",
+        quartile: "Q1",
+        impactFactor: "2.8",
+        domain: "Medical Imaging - Endoscopy",
+        summary:
+          "Treats boundary information as an active architectural component rather than an auxiliary loss, steering multi-scale context aggregation, selective skip fusion, and mask refinement through three modules on an EfficientNet-B4 backbone.",
+        keywords: ["Polyp segmentation", "Colonoscopy", "Boundary guidance", "EfficientNet-B4", "Attention fusion"],
+      },
     ],
   },
   {
     status: "In Preparation",
     icon: PenLine,
-    blurb: "Journal and workshop manuscripts in preparation. These are not circulated publicly - email the authors and they will share a copy on request.",
+    blurb: "Workshop manuscript in preparation. Not circulated publicly - email the authors and they will share a copy on request.",
     papers: [
       {
         title:
@@ -127,37 +168,6 @@ const sections: Section[] = [
           "Colonoscopy",
         ],
       },
-      {
-        title: "Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access",
-        authors: "Asma Jodeiri Akbarfam, Nishi Kanta Paul, Shereen Ismail",
-        venue: "Journal manuscript",
-        venueNote: "Target submission: September 2026",
-        domain: "Blockchain Forensics - Explainable AI",
-        summary:
-          "Extends the RBAC-SA blockchain forensics model with real-time behavioral anomaly scoring, risk-adaptive response, asynchronous TreeSHAP explanations, and verifiable on-chain auditing - detecting insider misuse that static authorization cannot see.",
-        keywords: ["Behavioral anomaly detection", "Blockchain", "Digital forensics", "Insider threat", "TreeSHAP", "Smart contracts"],
-      },
-      {
-        title:
-          "BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images",
-        authors: "Nishi Kanta Paul, Shamia Maherin, Morsheda Akter",
-        venue: "Journal manuscript",
-        venueNote: "Target submission: September 2026",
-        domain: "Medical Imaging - Endoscopy",
-        summary:
-          "Treats boundary information as an active architectural component rather than an auxiliary loss, steering multi-scale context aggregation, selective skip fusion, and mask refinement through three modules on an EfficientNet-B4 backbone.",
-        keywords: ["Polyp segmentation", "Colonoscopy", "Boundary guidance", "EfficientNet-B4", "Attention fusion"],
-      },
-      {
-        title: "LCM-UNet: A Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation",
-        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Kishor Morol",
-        venue: "Journal manuscript",
-        venueNote: "Target submission: September 2026",
-        domain: "Medical Imaging - Dermatology",
-        summary:
-          "Strengthens the local pathway of an ultra-compact state-space segmentation network with a zero-initialized dilated depthwise adapter that merges exactly into a single kernel after training - more capacity during learning, an unchanged graph at inference.",
-        keywords: ["Skin lesion segmentation", "State space model", "Mamba", "Structural reparameterization", "U-Net"],
-      },
     ],
   },
 ];
@@ -168,11 +178,18 @@ const statusStyles: Record<Status, string> = {
   "In Preparation": "bg-amber-500/10 text-amber-700 border-amber-600/30 dark:text-yellow-400 dark:border-yellow-500/20",
 };
 
+const quartileStyles: Record<NonNullable<Paper["quartile"]>, string> = {
+  Q1: "bg-violet-500/10 text-violet-700 border-violet-600/30 dark:text-violet-300 dark:border-violet-400/25",
+  Q2: "bg-sky-500/10 text-sky-700 border-sky-600/30 dark:text-sky-300 dark:border-sky-400/25",
+  Q3: "bg-slate-500/10 text-slate-700 border-slate-600/30 dark:text-slate-300 dark:border-slate-400/25",
+  Q4: "bg-slate-500/10 text-slate-700 border-slate-600/30 dark:text-slate-300 dark:border-slate-400/25",
+};
+
 const stats = [
   { value: "9", label: "Manuscripts" },
   { value: "3", label: "Accepted at IEEE venues" },
-  { value: "2", label: "Under review (ICCIT 2026)" },
-  { value: "4", label: "In preparation" },
+  { value: "5", label: "Under review" },
+  { value: "1", label: "In preparation" },
 ];
 
 const Publications = () => (
@@ -181,7 +198,7 @@ const Publications = () => (
       <div className="container mx-auto px-4">
         <SectionHeading
           title="Publications"
-          subtitle="Peer-reviewed and in-progress research across computer vision, signal modelling, efficient architectures, and trustworthy AI. PDFs are available for accepted and submitted work; manuscripts still in preparation are shared by the authors on request."
+          subtitle="Peer-reviewed and in-progress research across computer vision, signal modelling, efficient architectures, and trustworthy AI. PDFs are available where linked; manuscripts under review at journals or still in preparation are shared by the authors on request."
         />
 
         <div className="max-w-4xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
@@ -225,6 +242,22 @@ const Publications = () => (
                         {section.status}
                       </span>
                       <span className="text-xs text-muted-foreground px-2 py-1 rounded bg-secondary">{p.domain}</span>
+                      {p.quartile && (
+                        <span
+                          className={`text-xs font-medium px-2 py-1 rounded border ${quartileStyles[p.quartile]}`}
+                          title="Journal quartile ranking"
+                        >
+                          {p.quartile}
+                        </span>
+                      )}
+                      {p.impactFactor && (
+                        <span
+                          className={`text-xs font-medium px-2 py-1 rounded border ${quartileStyles[p.quartile ?? "Q1"]}`}
+                          title="Journal Impact Factor"
+                        >
+                          IF {p.impactFactor}
+                        </span>
+                      )}
                     </div>
 
                     <h4 className="font-heading font-semibold text-lg leading-snug">{p.title}</h4>
@@ -283,8 +316,9 @@ const Publications = () => (
         </div>
 
         <p className="max-w-4xl mx-auto text-sm text-muted-foreground mt-12 text-center">
-          Manuscripts under review are shared as author preprints for review purposes and may differ from the final
-          published versions. Manuscripts in preparation are not distributed publicly - write to{" "}
+          Manuscripts under review are shared as author preprints where a PDF is linked, and may differ from the final
+          published versions. Journal submissions and manuscripts in preparation are not distributed publicly - write
+          to{" "}
           <a href={`mailto:${LAB_EMAIL}`} className="text-primary hover:underline">
             {LAB_EMAIL}
           </a>{" "}

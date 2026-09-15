@@ -33,7 +33,6 @@ const researchAreas = [
 
 
 const news = [
-  { date: "Sep 2026", text: "Four manuscripts in preparation: CoMAF-Polyp (WACV Workshop, with Medical University of Vienna), ForensiBlock, BGD-SF PolySegNet, and LCM-UNet" },
   { date: "Aug 2026", text: "AWEF-Net and PDGuard submitted to IEEE ICCIT 2026 (under review)" },
   { date: "Jul 2026", text: "DR-LiteNet accepted at iCONEECT 2026" },
   { date: "Jun 2026", text: "SleepEffFormer and WaveFoG accepted at IEEE BECITHCON 2026" },
@@ -43,8 +42,8 @@ const news = [
 const impact = [
   { value: "9", label: "Manuscripts" },
   { value: "3", label: "IEEE acceptances" },
-  { value: "2", label: "Under review" },
-  { value: "4", label: "In preparation" },
+  { value: "5", label: "Under review" },
+  { value: "1", label: "In preparation" },
 ];
 
 const fadeUp = {
