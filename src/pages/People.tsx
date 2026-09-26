@@ -80,7 +80,7 @@ const groups: Group[] = [
   {
     title: "Collaborators & Co-authors",
     icon: UserRound,
-    blurb: "Researchers across four institutions in the United States and Austria who have co-authored our work.",
+    blurb: "Researchers across five institutions in the United States and Austria who have co-authored our work.",
     columns: "sm:grid-cols-2",
     members: [
       {
@@ -124,6 +124,22 @@ const groups: Group[] = [
         links: {
           scholar: "https://scholar.google.com/citations?user=zlzGrwIAAAAJ&hl=en",
           linkedin: "https://www.linkedin.com/in/shereen-ismail-phd-49b35415/",
+        },
+      },
+      {
+        name: "Xiaomin Lin",
+        role: "Assistant Professor",
+        affiliation: "University of South Florida",
+        links: {
+          scholar: "https://scholar.google.com/citations?user=nudP80UAAAAJ&hl=en",
+        },
+      },
+      {
+        name: "Trung Tien Dong",
+        role: "PhD Student, Electrical & Computer Engineering",
+        affiliation: "University of South Florida",
+        links: {
+          scholar: "https://scholar.google.com/citations?user=G8nWNPsAAAAJ&hl=en",
         },
       },
     ],

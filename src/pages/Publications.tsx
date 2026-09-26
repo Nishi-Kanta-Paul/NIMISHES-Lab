@@ -148,7 +148,7 @@ const sections: Section[] = [
   {
     status: "In Preparation",
     icon: PenLine,
-    blurb: "Workshop manuscript in preparation. Not circulated publicly - email the authors and they will share a copy on request.",
+    blurb: "Workshop manuscripts in preparation. Not circulated publicly - email the authors and they will share a copy on request.",
     papers: [
       {
         title:
@@ -166,6 +166,23 @@ const sections: Section[] = [
           "Foundation models",
           "Calibration",
           "Colonoscopy",
+        ],
+      },
+      {
+        title: "AquaProbe: Efficient Adaptation of Frozen Vision Models for Underwater Images",
+        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Trung Tien Dong, Xiaomin Lin",
+        venue: "WACV Workshop",
+        venueNote: "Target venue - manuscript in preparation",
+        domain: "Computer Vision - Underwater Imaging",
+        summary:
+          "Profiles where the land-to-underwater domain gap enters a frozen vision transformer using per-block CKA divergence, then allocates parameter-efficient (LoRA) adaptation capacity in proportion to that profile instead of spreading it uniformly. Across DINOv2, CLIP, and SAM backbones under 40+ rendered water conditions, the profile shifts with water type, and both proportional and condition-routed allocation outperform uniform LoRA at the same parameter budget on SUIM segmentation.",
+        keywords: [
+          "Underwater vision",
+          "Parameter-efficient fine-tuning",
+          "LoRA",
+          "Vision transformers",
+          "Domain adaptation",
+          "Foundation models",
         ],
       },
     ],
@@ -186,10 +203,10 @@ const quartileStyles: Record<NonNullable<Paper["quartile"]>, string> = {
 };
 
 const stats = [
-  { value: "9", label: "Manuscripts" },
+  { value: "10", label: "Manuscripts" },
   { value: "3", label: "Accepted at IEEE venues" },
   { value: "5", label: "Under review" },
-  { value: "1", label: "In preparation" },
+  { value: "2", label: "In preparation" },
 ];
 
 const Publications = () => (
