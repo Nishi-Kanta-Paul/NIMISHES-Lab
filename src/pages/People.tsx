@@ -29,6 +29,8 @@ type Member = {
   affiliation?: string;
   location?: string;
   image?: string;
+  /** Short intro, used sparingly - most cards keep to name/role/affiliation. */
+  bio?: string;
   links?: Links;
 };
 
@@ -80,7 +82,7 @@ const groups: Group[] = [
   {
     title: "Collaborators & Co-authors",
     icon: UserRound,
-    blurb: "Researchers across five institutions in the United States and Austria who have co-authored our work.",
+    blurb: "Researchers across six institutions in the United States, Austria, and the United Arab Emirates who have co-authored our work.",
     columns: "sm:grid-cols-2",
     members: [
       {
@@ -124,6 +126,18 @@ const groups: Group[] = [
         links: {
           scholar: "https://scholar.google.com/citations?user=zlzGrwIAAAAJ&hl=en",
           linkedin: "https://www.linkedin.com/in/shereen-ismail-phd-49b35415/",
+        },
+      },
+      {
+        name: "Jamil Fayyad",
+        role: "Assistant Professor, Dept. of Electrical Engineering",
+        affiliation: "American University of Sharjah, United Arab Emirates",
+        bio: "PhD in computer vision from the University of British Columbia; researches trustworthy perception for vision and vision-language systems under distribution shift, out-of-distribution detection, and uncertainty quantification.",
+        links: {
+          scholar: "https://scholar.google.ca/citations?user=zCvXxewAAAAJ&hl=en",
+          linkedin: "https://www.linkedin.com/in/jamilfayyad/",
+          github: "https://github.com/jfayyad",
+          website: "https://jfayyad.com",
         },
       },
       {
@@ -274,6 +288,9 @@ const People = () => (
                         )}
                         {member.location && (
                           <p className="text-sm text-muted-foreground mt-0.5">{member.location}</p>
+                        )}
+                        {member.bio && (
+                          <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{member.bio}</p>
                         )}
                         <div className="mt-auto">
                           <ProfileLinks links={member.links} name={member.name} />

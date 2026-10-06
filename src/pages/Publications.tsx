@@ -148,7 +148,7 @@ const sections: Section[] = [
   {
     status: "In Preparation",
     icon: PenLine,
-    blurb: "Workshop manuscripts in preparation. Not circulated publicly - email the authors and they will share a copy on request.",
+    blurb: "Manuscripts in preparation, targeting IEEE ISBI 2027 and WACV 2027 workshops. Not circulated publicly - email the authors and they will share a copy on request.",
     papers: [
       {
         title:
@@ -185,6 +185,41 @@ const sections: Section[] = [
           "Foundation models",
         ],
       },
+      {
+        title:
+          "APED-CXR: Adaptive Privileged Evidence Distillation for Chest X-Ray Grounding with Image-Only Inference",
+        authors: "Nishi Kanta Paul, Jamil Fayyad",
+        venue: "IEEE Int. Symposium on Biomedical Imaging (ISBI 2027)",
+        venueNote: "Target venue - manuscript in preparation",
+        domain: "Medical Imaging - Radiology",
+        summary:
+          "Studies whether privileged evidence available only during training, such as radiology reports, can be distilled into a chest X-ray grounding model so it localizes findings accurately from the image alone at inference, without needing that extra evidence at test time.",
+        keywords: [
+          "Chest X-ray grounding",
+          "Privileged information",
+          "Knowledge distillation",
+          "Visual grounding",
+          "Medical imaging",
+          "Image-only inference",
+        ],
+      },
+      {
+        title: "Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems",
+        authors: "Nishi Kanta Paul, Jamil Fayyad",
+        venue: "WACV 2027 - SENSE Workshop",
+        venueNote: "Target venue - manuscript in preparation",
+        domain: "Trustworthy AI - Agentic Vision Systems",
+        summary:
+          "Investigates whether failures in multi-component agentic medical vision pipelines are coupled across modules or arise independently, toward more reliable fault diagnosis and safety auditing of agentic systems deployed on medical imaging tasks.",
+        keywords: [
+          "Agentic AI",
+          "Medical vision systems",
+          "Fault coupling",
+          "Robustness",
+          "Safety evaluation",
+          "Multi-agent systems",
+        ],
+      },
     ],
   },
 ];
@@ -203,10 +238,10 @@ const quartileStyles: Record<NonNullable<Paper["quartile"]>, string> = {
 };
 
 const stats = [
-  { value: "10", label: "Manuscripts" },
+  { value: "12", label: "Manuscripts" },
   { value: "3", label: "Accepted at IEEE venues" },
   { value: "5", label: "Under review" },
-  { value: "2", label: "In preparation" },
+  { value: "4", label: "In preparation" },
 ];
 
 const Publications = () => (
