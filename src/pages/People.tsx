@@ -82,7 +82,7 @@ const groups: Group[] = [
   {
     title: "Collaborators & Co-authors",
     icon: UserRound,
-    blurb: "Researchers across six institutions in the United States, Austria, and the United Arab Emirates who have co-authored our work.",
+    blurb: "Researchers across seven institutions in the United States, Austria, and the United Arab Emirates who have co-authored our work.",
     columns: "sm:grid-cols-2",
     members: [
       {
@@ -138,6 +138,20 @@ const groups: Group[] = [
           linkedin: "https://www.linkedin.com/in/jamilfayyad/",
           github: "https://github.com/jfayyad",
           website: "https://jfayyad.com",
+        },
+      },
+      {
+        name: "Md Mostafijur Rahman",
+        role: "Assistant Professor (Tenure-Track), Dept. of Electrical & Computer Engineering",
+        affiliation: "Texas Tech University, United States",
+        image: "/Profile/MostafijurRahman.png",
+        bio: "PhD in electrical and computer engineering from The University of Texas at Austin; builds efficient, trustworthy AI for biomedical imaging and computer vision, with work at CVPR, NeurIPS, MICCAI, and ICCV.",
+        links: {
+          email: "mostafijur.rahman@utexas.edu",
+          scholar: "https://scholar.google.com/citations?user=e0SzHPMAAAAJ",
+          linkedin: "https://www.linkedin.com/in/mostafij-rahman",
+          github: "https://github.com/mostafij-rahman",
+          website: "https://mostafij-rahman.github.io/",
         },
       },
       {
