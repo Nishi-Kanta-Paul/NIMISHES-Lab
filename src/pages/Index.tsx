@@ -33,17 +33,16 @@ const researchAreas = [
 
 
 const news = [
-  { date: "Aug 2026", text: "AWEF-Net and PDGuard submitted to IEEE ICCIT 2026 (under review)" },
   { date: "Jul 2026", text: "DR-LiteNet accepted at iCONEECT 2026" },
   { date: "Jun 2026", text: "SleepEffFormer and WaveFoG accepted at IEEE BECITHCON 2026" },
   { date: "Apr 2026", text: "NIMISHES Lab officially launches as an independent research initiative" },
 ];
 
 const impact = [
-  { value: "12", label: "Manuscripts" },
+  { value: "10", label: "Manuscripts" },
   { value: "3", label: "IEEE acceptances" },
   { value: "5", label: "Under review" },
-  { value: "4", label: "In preparation" },
+  { value: "2", label: "In preparation" },
 ];
 
 const fadeUp = {

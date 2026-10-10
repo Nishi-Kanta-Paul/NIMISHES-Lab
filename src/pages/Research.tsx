@@ -10,7 +10,7 @@ const areas = [
     title: "Deep Learning Architectures",
     desc: "Designing and analysing neural architectures  convolutional, recurrent, Transformer, and state-space models  with a focus on attention, gating, and multi-branch fusion as mechanisms for combining heterogeneous representations.",
     papers: [
-      { name: "AWEF-Net", pdf: "/papers/AWEF-Net.pdf" },
+      { name: "AquaProbe" },
       { name: "WaveFoG", pdf: "/papers/WaveFoG.pdf" },
       { name: "LCM-UNet" },
     ],
@@ -22,7 +22,7 @@ const areas = [
     papers: [
       { name: "LCM-UNet" },
       { name: "SleepEffFormer", pdf: "/papers/SleepEffFormer.pdf" },
-      { name: "PDGuard", pdf: "/papers/PDGuard.pdf" },
+      { name: "AquaProbe" },
     ],
   },
   {
@@ -32,7 +32,7 @@ const areas = [
     papers: [
       { name: "BGD-SF PolySegNet" },
       { name: "LCM-UNet" },
-      { name: "AWEF-Net", pdf: "/papers/AWEF-Net.pdf" },
+      { name: "APED-CXR" },
     ],
   },
   {
@@ -42,7 +42,6 @@ const areas = [
     papers: [
       { name: "SleepEffFormer", pdf: "/papers/SleepEffFormer.pdf" },
       { name: "WaveFoG", pdf: "/papers/WaveFoG.pdf" },
-      { name: "PDGuard", pdf: "/papers/PDGuard.pdf" },
     ],
   },
   {
@@ -80,7 +79,7 @@ const areas = [
     papers: [
       { name: "BGD-SF PolySegNet" },
       { name: "LCM-UNet" },
-      { name: "PDGuard", pdf: "/papers/PDGuard.pdf" },
+      { name: "AquaProbe" },
     ],
   },
 ];
@@ -97,7 +96,7 @@ const methods = [
     icon: Layers,
     title: "Attention, Gating & Multi-Branch Fusion",
     desc: "Learning how to combine heterogeneous representations instead of averaging or concatenating them.",
-    evidence: "AWEF-Net input-adaptive ensemble gating - WaveFoG wavelet sub-band gating - BGD-SF boundary-guided selective attention fusion",
+    evidence: "CoMAF-Polyp calibrated reliability-weighted pseudo-label fusion - WaveFoG wavelet sub-band gating - BGD-SF boundary-guided selective attention fusion",
   },
   {
     icon: Cpu,

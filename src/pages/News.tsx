@@ -30,12 +30,6 @@ const kindStyles: Record<NewsKind, { icon: LucideIcon; badge: string; icon_color
 
 const updates: { date: string; kind: NewsKind; title: string; desc: string }[] = [
   {
-    date: "August 2026",
-    kind: "Submission",
-    title: "Two papers submitted to IEEE ICCIT 2026",
-    desc: "AWEF-Net (input-adaptive attention gating for ensemble fusion) and PDGuard (CNN-BiLSTM attention over raw wearable sensor streams) are under review at the 29th IEEE International Conference on Computer and Information Technology.",
-  },
-  {
     date: "July 2026",
     kind: "Acceptance",
     title: "DR-LiteNet accepted at iCONEECT 2026",
