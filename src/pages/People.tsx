@@ -82,7 +82,7 @@ const groups: Group[] = [
   {
     title: "Collaborators & Co-authors",
     icon: UserRound,
-    blurb: "Researchers across seven institutions in the United States, Austria, and the United Arab Emirates who have co-authored our work.",
+    blurb: "Researchers across nine institutions in the United States, Austria, France, and the United Arab Emirates who have co-authored our work.",
     columns: "sm:grid-cols-2",
     members: [
       {
@@ -132,6 +132,7 @@ const groups: Group[] = [
         name: "Jamil Fayyad",
         role: "Assistant Professor, Dept. of Electrical Engineering",
         affiliation: "American University of Sharjah, United Arab Emirates",
+        image: "/Profile/JamilFayyad.png",
         bio: "PhD in computer vision from the University of British Columbia; researches trustworthy perception for vision and vision-language systems under distribution shift, out-of-distribution detection, and uncertainty quantification.",
         links: {
           scholar: "https://scholar.google.ca/citations?user=zCvXxewAAAAJ&hl=en",
@@ -158,6 +159,7 @@ const groups: Group[] = [
         name: "Xiaomin Lin",
         role: "Assistant Professor",
         affiliation: "University of South Florida",
+        image: "/Profile/XiaominLin.png",
         links: {
           scholar: "https://scholar.google.com/citations?user=nudP80UAAAAJ&hl=en",
         },
@@ -166,8 +168,33 @@ const groups: Group[] = [
         name: "Trung Tien Dong",
         role: "PhD Student, Electrical & Computer Engineering",
         affiliation: "University of South Florida",
+        image: "/Profile/TrungTienDong.png",
         links: {
           scholar: "https://scholar.google.com/citations?user=G8nWNPsAAAAJ&hl=en",
+        },
+      },
+      {
+        name: "Dwarikanath Mahapatra",
+        role: "Assistant Professor, Dept. of Computer Science",
+        affiliation: "Khalifa University, Abu Dhabi, United Arab Emirates",
+        image: "/Profile/DwarikanathMahapatra.png",
+        bio: "PhD from the National University of Singapore; formerly at ETH Zurich, IBM Research Australia, and the Inception Institute of AI; works on medical image analysis, multimodal LLMs, and trustworthy AI, with 100+ papers and 15 patents.",
+        links: {
+          email: "dwarikanath.mahapatra@ku.ac.ae",
+          scholar: "https://scholar.google.com/citations?user=j5K7HPoAAAAJ&hl=en",
+          website: "https://www.ku.ac.ae/college-people/dwarikanath-mahapatra/",
+        },
+      },
+      {
+        name: "Désiré Sidibé",
+        role: "Professor, IBISC Laboratory",
+        affiliation: "Université d'Évry – Paris-Saclay, France",
+        image: "/Profile/DesireSidibe.png",
+        bio: "Deputy director of the ED STIC doctoral school at Université Paris-Saclay and Associate Editor of IEEE RA-L; works on computer vision and machine learning for segmentation, detection, tracking, medical image analysis, and autonomous vehicles.",
+        links: {
+          scholar: "https://scholar.google.com/citations?user=RuWlFUsAAAAJ&hl=en",
+          linkedin: "https://www.linkedin.com/in/d%C3%A9sir%C3%A9-sidibe-0860024/",
+          website: "https://sites.google.com/view/dsidibe/",
         },
       },
     ],
