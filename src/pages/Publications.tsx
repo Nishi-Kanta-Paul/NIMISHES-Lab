@@ -19,6 +19,7 @@ type Paper = {
   /** Journal Impact Factor, e.g. "7.7". */
   impactFactor?: string;
   pdf?: string;
+  arxiv?: string;
   code?: string;
 };
 
@@ -32,6 +33,7 @@ type Section = {
 const LAB_EMAIL = "nimisheslab72@gmail.com";
 
 const WACV_2027 = "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027";
+const ISBI_2027 = "IEEE International Symposium on Biomedical Imaging (ISBI) 2027";
 
 const sections: Section[] = [
   {
@@ -47,6 +49,7 @@ const sections: Section[] = [
         venue:
           "Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026",
         pdf: "/papers/SleepEffFormer.pdf",
+        arxiv: "https://arxiv.org/abs/2609.22148",
         code: "https://github.com/Nishi-Kanta-Paul/SleepStage",
       },
       {
@@ -57,6 +60,7 @@ const sections: Section[] = [
         venue:
           "Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026",
         pdf: "/papers/WaveFoG.pdf",
+        arxiv: "https://arxiv.org/abs/2609.22147",
         code: "https://github.com/Shihabul-Shuvo/WaveFoG",
       },
       {
@@ -74,7 +78,7 @@ const sections: Section[] = [
   {
     status: "Under Review",
     icon: Clock,
-    blurb: "Submitted to peer-reviewed journals and WACV 2027 workshops.",
+    blurb: "Submitted to peer-reviewed journals, IEEE ISBI 2027, and WACV 2027 workshops.",
     papers: [
       {
         tag: "IEEE JBHI",
@@ -102,6 +106,27 @@ const sections: Section[] = [
         impactFactor: "2.8",
       },
       {
+        tag: "ISBI 2027",
+        title:
+          "APED-CXR: Adaptive Privileged Evidence Distillation for Chest X-Ray Grounding with Image-Only Inference",
+        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Jamil Fayyad",
+        venue: ISBI_2027,
+        arxiv: "https://arxiv.org/abs/2610.29740",
+      },
+      {
+        tag: "ISBI 2027",
+        title:
+          "Band2Net: Frequency-to-Network Transport Distillation for fMRI-Privileged, EEG-Only Session-Condition Decoding",
+        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Dwarikanath Mahapatra",
+        venue: ISBI_2027,
+      },
+      {
+        tag: "ISBI 2027",
+        title: "LAPIS: Clinically Constrained Patient-Identity Residual Learning for Chest X-Ray Anonymization",
+        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Désiré Sidibé",
+        venue: ISBI_2027,
+      },
+      {
         tag: "WACV 2027 Workshop",
         title: "Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems",
         authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Jamil Fayyad, Md Mostafijur Rahman",
@@ -118,15 +143,8 @@ const sections: Section[] = [
   {
     status: "In Preparation",
     icon: PenLine,
-    blurb: "Manuscripts in preparation for IEEE ISBI 2027 and MIDL 2027.",
+    blurb: "Manuscript in preparation for MIDL 2027.",
     papers: [
-      {
-        tag: "ISBI 2027",
-        title:
-          "APED-CXR: Adaptive Privileged Evidence Distillation for Chest X-Ray Grounding with Image-Only Inference",
-        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Jamil Fayyad",
-        venue: "Target venue: IEEE International Symposium on Biomedical Imaging (ISBI) 2027",
-      },
       {
         tag: "MIDL 2027",
         title:
@@ -152,11 +170,17 @@ const PaperLinks = ({ paper }: { paper: Paper }) => {
   const link = "text-primary hover:underline";
   return (
     <p className="text-sm mt-2 flex flex-wrap gap-x-3 gap-y-1">
-      {paper.pdf ? (
+      {paper.pdf && (
         <span>
           [<a href={paper.pdf} target="_blank" rel="noreferrer" className={link}>Paper</a>]
         </span>
-      ) : (
+      )}
+      {paper.arxiv && (
+        <span>
+          [<a href={paper.arxiv} target="_blank" rel="noreferrer" className={link}>arXiv</a>]
+        </span>
+      )}
+      {!paper.pdf && !paper.arxiv && (
         <span>
           [
           <a
@@ -256,7 +280,7 @@ const Publications = () => {
           </div>
 
           <p className="max-w-4xl mx-auto text-sm text-muted-foreground mt-12 text-center">
-            Manuscripts under review or in preparation are not distributed publicly - write to{" "}
+            Manuscripts without a public preprint are not distributed publicly - write to{" "}
             <a href={`mailto:${LAB_EMAIL}`} className="text-primary hover:underline">
               {LAB_EMAIL}
             </a>{" "}

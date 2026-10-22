@@ -11,7 +11,7 @@ const areas = [
     desc: "Designing and analysing neural architectures  convolutional, recurrent, Transformer, and state-space models  with a focus on attention, gating, and multi-branch fusion as mechanisms for combining heterogeneous representations.",
     papers: [
       { name: "AquaProbe" },
-      { name: "WaveFoG", pdf: "/papers/WaveFoG.pdf" },
+      { name: "WaveFoG", link: "/papers/WaveFoG.pdf" },
       { name: "LCM-UNet" },
     ],
   },
@@ -21,7 +21,7 @@ const areas = [
     desc: "Building models under hard parameter, latency, and FLOP budgets so they run on CPUs, edge devices, and consumer hardware  using structural reparameterization, compact backbones, and architecture-level compression rather than post-hoc pruning alone.",
     papers: [
       { name: "LCM-UNet" },
-      { name: "SleepEffFormer", pdf: "/papers/SleepEffFormer.pdf" },
+      { name: "SleepEffFormer", link: "/papers/SleepEffFormer.pdf" },
       { name: "AquaProbe" },
     ],
   },
@@ -32,7 +32,7 @@ const areas = [
     papers: [
       { name: "BGD-SF PolySegNet" },
       { name: "LCM-UNet" },
-      { name: "APED-CXR" },
+      { name: "APED-CXR", link: "https://arxiv.org/abs/2610.29740" },
     ],
   },
   {
@@ -40,8 +40,9 @@ const areas = [
     title: "Time-Series & Signal Intelligence",
     desc: "Learning from sequential and sensor data  wavelet and spectral representations, temporal context modelling, and sequence-level post-processing  evaluated under subject-independent protocols that test genuine generalisation.",
     papers: [
-      { name: "SleepEffFormer", pdf: "/papers/SleepEffFormer.pdf" },
-      { name: "WaveFoG", pdf: "/papers/WaveFoG.pdf" },
+      { name: "SleepEffFormer", link: "/papers/SleepEffFormer.pdf" },
+      { name: "WaveFoG", link: "/papers/WaveFoG.pdf" },
+      { name: "Band2Net" },
     ],
   },
   {
@@ -49,9 +50,9 @@ const areas = [
     title: "Explainable & Trustworthy AI",
     desc: "Making predictions inspectable and defensible by the people who act on them, through gradient- and game-theoretic attribution, attention analysis, and calibrated, honestly-reported uncertainty.",
     papers: [
-      { name: "DR-LiteNet", pdf: "/papers/DR-LiteNet.pdf" },
+      { name: "DR-LiteNet", link: "/papers/DR-LiteNet.pdf" },
       { name: "Anomaly-Aware ForensiBlock" },
-      { name: "SleepEffFormer", pdf: "/papers/SleepEffFormer.pdf" },
+      { name: "SleepEffFormer", link: "/papers/SleepEffFormer.pdf" },
     ],
   },
   {
@@ -59,8 +60,8 @@ const areas = [
     title: "Imbalanced & Data-Efficient Learning",
     desc: "Handling skewed, long-tailed, and label-scarce data as a first-class problem  synthetic minority generation in feature space, cost-sensitive objectives, and evaluation metrics that do not flatter a majority-class predictor.",
     papers: [
-      { name: "DR-LiteNet", pdf: "/papers/DR-LiteNet.pdf" },
-      { name: "WaveFoG", pdf: "/papers/WaveFoG.pdf" },
+      { name: "DR-LiteNet", link: "/papers/DR-LiteNet.pdf" },
+      { name: "WaveFoG", link: "/papers/WaveFoG.pdf" },
       { name: "Anomaly-Aware ForensiBlock" },
     ],
   },
@@ -70,6 +71,7 @@ const areas = [
     desc: "Anomaly detection, behavioral monitoring, and privacy-aware infrastructure for sensitive data  combining machine learning with tamper-evident logging, access control, and verifiable auditing.",
     papers: [
       { name: "Anomaly-Aware ForensiBlock" },
+      { name: "LAPIS" },
     ],
   },
   {
@@ -149,9 +151,9 @@ const Research = () => (
                     <ul className="flex flex-wrap gap-x-4 gap-y-1.5">
                       {a.papers.map((paper) => (
                         <li key={paper.name}>
-                          {paper.pdf ? (
+                          {paper.link ? (
                             <a
-                              href={paper.pdf}
+                              href={paper.link}
                               target="_blank"
                               rel="noreferrer"
                               className="text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-start gap-2"
@@ -161,7 +163,7 @@ const Research = () => (
                             </a>
                           ) : (
                             <span
-                              title="Manuscript in preparation - available from the authors on request"
+                              title="Not yet public - a copy is available from the authors on request"
                               className="text-sm text-muted-foreground inline-flex items-start gap-2"
                             >
                               <FileText size={13} className="mt-0.5 shrink-0 text-muted-foreground" />
