@@ -82,7 +82,7 @@ const groups: Group[] = [
   {
     title: "Collaborators & Co-authors",
     icon: UserRound,
-    blurb: "Researchers across nine institutions in the United States, Austria, France, and the United Arab Emirates who have co-authored our work.",
+    blurb: "Researchers across nine institutions in the United States, the United Arab Emirates, France, and Austria who have co-authored our work.",
     columns: "sm:grid-cols-2",
     members: [
       {

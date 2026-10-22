@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Network, Cpu, Eye, Lightbulb, ArrowRight, Newspaper, Users, FileText } from "lucide-react";
+import { Network, Cpu, Eye, Lightbulb, ArrowRight, Newspaper, Users, FileText, Globe } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import HeroBackground from "@/components/HeroBackground";
@@ -70,9 +70,16 @@ const Index = () => (
           <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight">
             NIMISHES <span className="gradient-text">Lab</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-5 max-w-2xl">
             We build efficient, explainable deep learning systems for high-stakes decisions  models small enough to deploy, transparent enough to trust, and evaluated honestly enough to believe.
           </p>
+          <Link
+            to="/people"
+            className="flex w-fit items-start gap-2 text-sm md:text-base text-foreground/80 hover:text-primary transition-colors mb-8 max-w-2xl"
+          >
+            <Globe size={18} className="text-primary mt-0.5 shrink-0" />
+            <span>Working with researchers at nine institutions in the USA, UAE, France, and Austria.</span>
+          </Link>
           <div className="flex flex-wrap gap-4">
             <Link
               to="/research"
