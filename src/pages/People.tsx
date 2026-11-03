@@ -96,18 +96,18 @@ const groups: Group[] = [
           website: "https://riic.ai/",
         },
       },
-      {
-        name: "Kishor Morol",
-        role: "AI Safety Researcher, Meta",
-        affiliation: "Founder, ELITE Research Lab",
-        location: "New York, United States",
-        image: "/Profile/KishorMorol.png",
-        links: {
-          scholar: "https://scholar.google.com/citations?user=pjn3jg4AAAAJ&hl=en",
-          linkedin: "https://www.linkedin.com/in/kishormorol/",
-          website: "https://elitelab.ai/",
-        },
-      },
+      // {
+      //   name: "Kishor Morol",
+      //   role: "AI Safety Researcher, Meta",
+      //   affiliation: "Founder, ELITE Research Lab",
+      //   location: "New York, United States",
+      //   image: "/Profile/KishorMorol.png",
+      //   links: {
+      //     scholar: "https://scholar.google.com/citations?user=pjn3jg4AAAAJ&hl=en",
+      //     linkedin: "https://www.linkedin.com/in/kishormorol/",
+      //     website: "https://elitelab.ai/",
+      //   },
+      // },
       {
         name: "Asma Jodeiri Akbarfam",
         role: "Assistant Professor",
