@@ -40,8 +40,8 @@ const news = [
 
 const impact = [
   { value: "12", label: "Manuscripts" },
-  { value: "3", label: "IEEE acceptances" },
-  { value: "8", label: "Under review" },
+  { value: "4", label: "Accepted papers" },
+  { value: "7", label: "Under review" },
   { value: "1", label: "In preparation" },
 ];
 

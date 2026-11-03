@@ -10,7 +10,7 @@ const areas = [
     title: "Deep Learning Architectures",
     desc: "Designing and analysing neural architectures  convolutional, recurrent, Transformer, and state-space models  with a focus on attention, gating, and multi-branch fusion as mechanisms for combining heterogeneous representations.",
     papers: [
-      { name: "AquaProbe" },
+      { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
       { name: "WaveFoG", link: "/papers/WaveFoG.pdf" },
       { name: "LCM-UNet" },
     ],
@@ -22,7 +22,7 @@ const areas = [
     papers: [
       { name: "LCM-UNet" },
       { name: "SleepEffFormer", link: "/papers/SleepEffFormer.pdf" },
-      { name: "AquaProbe" },
+      { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
     ],
   },
   {
@@ -30,7 +30,7 @@ const areas = [
     title: "Computer Vision",
     desc: "Classification, segmentation, and dense prediction  including boundary-aware segmentation, multi-scale context aggregation, selective skip fusion, and ensemble strategies that adapt to the input rather than averaging over it.",
     papers: [
-      { name: "BGD-SF PolySegNet" },
+      { name: "BGD-SF PolySegNet", link: "https://arxiv.org/abs/2611.02603" },
       { name: "LCM-UNet" },
       { name: "APED-CXR", link: "https://arxiv.org/abs/2610.29740" },
     ],
@@ -42,7 +42,7 @@ const areas = [
     papers: [
       { name: "SleepEffFormer", link: "/papers/SleepEffFormer.pdf" },
       { name: "WaveFoG", link: "/papers/WaveFoG.pdf" },
-      { name: "Band2Net" },
+      { name: "Band2Net", link: "https://arxiv.org/abs/2611.01548" },
     ],
   },
   {
@@ -71,7 +71,7 @@ const areas = [
     desc: "Anomaly detection, behavioral monitoring, and privacy-aware infrastructure for sensitive data  combining machine learning with tamper-evident logging, access control, and verifiable auditing.",
     papers: [
       { name: "Anomaly-Aware ForensiBlock" },
-      { name: "LAPIS" },
+      { name: "LAPIS", link: "https://arxiv.org/abs/2610.40722" },
     ],
   },
   {
@@ -79,9 +79,9 @@ const areas = [
     title: "Rigorous Evaluation & Reproducibility",
     desc: "Treating experimental design as part of the contribution: subject-disjoint and grouped cross-validation, external held-out datasets, non-parametric significance testing with effect sizes, and baselines that share identical folds and preprocessing.",
     papers: [
-      { name: "BGD-SF PolySegNet" },
+      { name: "BGD-SF PolySegNet", link: "https://arxiv.org/abs/2611.02603" },
       { name: "LCM-UNet" },
-      { name: "AquaProbe" },
+      { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
     ],
   },
 ];

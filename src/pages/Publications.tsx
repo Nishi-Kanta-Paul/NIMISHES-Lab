@@ -39,8 +39,15 @@ const sections: Section[] = [
   {
     status: "Accepted",
     icon: CheckCircle2,
-    blurb: "Accepted for presentation at IEEE and international conferences in 2026.",
+    blurb: "Accepted for presentation at IEEE and international conferences and workshops in 2026 and 2027.",
     papers: [
+      {
+        tag: "WACV 2027 Workshop",
+        title: "AquaProbe: Efficient Adaptation of Frozen Vision Models for Underwater Images",
+        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Trung Dong, Xiaomin Lin",
+        venue: `5th Workshop on Maritime Computer Vision (MaCVi), ${WACV_2027}`,
+        arxiv: "https://arxiv.org/abs/2610.40900",
+      },
       {
         tag: "BECITHCON 2026",
         title:
@@ -55,7 +62,7 @@ const sections: Section[] = [
       {
         tag: "BECITHCON 2026",
         title:
-          "WaveFoG: Wavelet-Gated Transformer for Parkinson's Freezing of Gait Detection Using Wearable Accelerometer Signals",
+          "WaveFoG: Wavelet Gated Transformer for Parkinson's Freezing of Gait Detection Using Wearable Accelerometer Signals",
         authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Adrita Rahman, Israt Jerin Esha",
         venue:
           "Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026",
@@ -100,10 +107,11 @@ const sections: Section[] = [
         tag: "PLOS ONE",
         title:
           "BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images",
-        authors: "Nishi Kanta Paul, Shamia Maherin, Morsheda Akter",
+        authors: "Nishi Kanta Paul, Shamia Maherin, Morsheda Akter, Moinul Hossain, Md Kishor Morol",
         venue: "PLOS ONE",
         quartile: "Q1",
         impactFactor: "2.8",
+        arxiv: "https://arxiv.org/abs/2611.02603",
       },
       {
         tag: "ISBI 2027",
@@ -119,24 +127,21 @@ const sections: Section[] = [
           "Band2Net: Frequency-to-Network Transport Distillation for fMRI-Privileged, EEG-Only Session-Condition Decoding",
         authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Dwarikanath Mahapatra",
         venue: ISBI_2027,
+        arxiv: "https://arxiv.org/abs/2611.01548",
       },
       {
         tag: "ISBI 2027",
         title: "LAPIS: Clinically Constrained Patient-Identity Residual Learning for Chest X-Ray Anonymization",
         authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Désiré Sidibé",
         venue: ISBI_2027,
+        arxiv: "https://arxiv.org/abs/2610.40722",
       },
       {
         tag: "WACV 2027 Workshop",
         title: "Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems",
-        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Jamil Fayyad, Md Mostafijur Rahman",
+        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Md Mostafijur Rahman, Jamil Fayyad",
         venue: `Workshop on Foundation AI for Biomedical Reasoning, Imaging, and Cognition (FABRIC), ${WACV_2027}`,
-      },
-      {
-        tag: "WACV 2027 Workshop",
-        title: "AquaProbe: Efficient Adaptation of Frozen Vision Models for Underwater Images",
-        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Trung Tien Dong, Xiaomin Lin",
-        venue: `5th Workshop on Maritime Computer Vision (MaCVi), ${WACV_2027}`,
+        arxiv: "https://arxiv.org/abs/2610.40913",
       },
     ],
   },
