@@ -12,7 +12,7 @@ const areas = [
     papers: [
       { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
       { name: "WaveFoG", link: "/papers/WaveFoG.pdf" },
-      { name: "LCM-UNet" },
+      { name: "LCM-UNet", link: "https://arxiv.org/abs/2611.04409" },
     ],
   },
   {
@@ -20,7 +20,7 @@ const areas = [
     title: "Efficient & Edge AI",
     desc: "Building models under hard parameter, latency, and FLOP budgets so they run on CPUs, edge devices, and consumer hardware  using structural reparameterization, compact backbones, and architecture-level compression rather than post-hoc pruning alone.",
     papers: [
-      { name: "LCM-UNet" },
+      { name: "LCM-UNet", link: "https://arxiv.org/abs/2611.04409" },
       { name: "SleepEffFormer", link: "/papers/SleepEffFormer.pdf" },
       { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
     ],
@@ -31,7 +31,7 @@ const areas = [
     desc: "Classification, segmentation, and dense prediction  including boundary-aware segmentation, multi-scale context aggregation, selective skip fusion, and ensemble strategies that adapt to the input rather than averaging over it.",
     papers: [
       { name: "BGD-SF PolySegNet", link: "https://arxiv.org/abs/2611.02603" },
-      { name: "LCM-UNet" },
+      { name: "LCM-UNet", link: "https://arxiv.org/abs/2611.04409" },
       { name: "APED-CXR", link: "https://arxiv.org/abs/2610.29740" },
     ],
   },
@@ -80,7 +80,7 @@ const areas = [
     desc: "Treating experimental design as part of the contribution: subject-disjoint and grouped cross-validation, external held-out datasets, non-parametric significance testing with effect sizes, and baselines that share identical folds and preprocessing.",
     papers: [
       { name: "BGD-SF PolySegNet", link: "https://arxiv.org/abs/2611.02603" },
-      { name: "LCM-UNet" },
+      { name: "LCM-UNet", link: "https://arxiv.org/abs/2611.04409" },
       { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
     ],
   },
@@ -92,7 +92,7 @@ const methods = [
     icon: Shrink,
     title: "Efficient & Lightweight Architectures",
     desc: "Designing models under hard parameter and FLOP budgets without surrendering accuracy.",
-    evidence: "LCM-UNet at 34,180 parameters / 0.06 GFLOPs - SleepEffFormer matching AttnSleep with 3-5x fewer parameters - DR-LiteNet beating ResNet50 at a fifth of the size",
+    evidence: "LCM-UNet at 33,474 parameters - SleepEffFormer matching AttnSleep with 3-5x fewer parameters - DR-LiteNet beating ResNet50 at a fifth of the size",
   },
   {
     icon: Layers,
@@ -104,7 +104,7 @@ const methods = [
     icon: Cpu,
     title: "Structural Reparameterization",
     desc: "Adding capacity during training that folds away exactly at inference, leaving the deployed graph unchanged.",
-    evidence: "LCM-UNet - dilated depthwise adapters merged into a single sparse kernel, verified to numerical tolerance",
+    evidence: "LCM-UNet - dilated, horizontal, and vertical depthwise adapter branches folded into the host kernel before inference",
   },
   {
     icon: Scale,

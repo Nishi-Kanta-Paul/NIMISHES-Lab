@@ -78,6 +78,7 @@ const sections: Section[] = [
         venue:
           "Proceedings of the 1st International Conference on Next-Generation Electrical & Electronics, Computer Systems, and Technologies (iCONEECT), Chittagong, Bangladesh, 2026",
         pdf: "/papers/DR-LiteNet.pdf",
+        arxiv: "https://arxiv.org/abs/2611.04405",
         code: "https://github.com/Nishi-Kanta-Paul/DR-LiteNet",
       },
     ],
@@ -89,9 +90,10 @@ const sections: Section[] = [
     papers: [
       {
         tag: "IEEE JBHI",
-        title: "LCM-UNet: A Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation",
-        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Kishor Morol",
+        title: "LCM-UNet: Scale-Selective Mamba with Reparameterizable Multi-Basis Local Modeling for Lightweight Skin Lesion Segmentation",
+        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Dip Kumar Saha, Kishor Morol",
         venue: "IEEE Journal of Biomedical and Health Informatics",
+        arxiv: "https://arxiv.org/abs/2611.04409",
         quartile: "Q1",
         impactFactor: "7.7",
       },
