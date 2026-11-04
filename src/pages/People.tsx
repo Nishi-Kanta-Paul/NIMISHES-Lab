@@ -82,20 +82,20 @@ const groups: Group[] = [
   {
     title: "Collaborators & Co-authors",
     icon: UserRound,
-    blurb: "Researchers across nine institutions in the United States, the United Arab Emirates, France, and Austria who have co-authored our work.",
+    blurb: "Researchers at institutions in the United States, the United Arab Emirates, and France who have co-authored our work.",
     columns: "sm:grid-cols-2",
     members: [
-      {
-        name: "Camila Gonz\u00e1lez",
-        role: "Assistant Professor (Tenure-Track) & PI, RIIC Lab",
-        affiliation:
-          "Dept. of Anesthesia, Intensive Care Medicine, and Pain Medicine, Medical University of Vienna, Austria",
-        image: "/Profile/ProfCamila.png",
-        links: {
-          scholar: "https://scholar.google.com/citations?user=VbpLc7YAAAAJ&hl=en",
-          website: "https://riic.ai/",
-        },
-      },
+      // {
+        // name: "Camila Gonz\u00e1lez",
+        // role: "Assistant Professor (Tenure-Track) & PI, RIIC Lab",
+        // affiliation:
+          // "Dept. of Anesthesia, Intensive Care Medicine, and Pain Medicine, Medical University of Vienna, Austria",
+        // image: "/Profile/ProfCamila.png",
+        // links: {
+          // scholar: "https://scholar.google.com/citations?user=VbpLc7YAAAAJ&hl=en",
+          // website: "https://riic.ai/",
+        // },
+      // },
       // {
       //   name: "Kishor Morol",
       //   role: "AI Safety Researcher, Meta",

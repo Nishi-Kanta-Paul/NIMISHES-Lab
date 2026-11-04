@@ -39,10 +39,10 @@ const news = [
 ];
 
 const impact = [
-  { value: "12", label: "Manuscripts" },
+  { value: "11", label: "Manuscripts" },
   { value: "4", label: "Accepted papers" },
   { value: "7", label: "Under review" },
-  { value: "1", label: "In preparation" },
+  // { value: "1", label: "In preparation" },
 ];
 
 const fadeUp = {
@@ -78,7 +78,7 @@ const Index = () => (
             className="flex w-fit items-start gap-2 text-sm md:text-base text-foreground/80 hover:text-primary transition-colors mb-8 max-w-2xl"
           >
             <Globe size={18} className="text-primary mt-0.5 shrink-0" />
-            <span>Working with researchers at nine institutions in the USA, UAE, France, and Austria.</span>
+            <span>Working with researchers at institutions in the USA, UAE, and France.</span>
           </Link>
           <div className="flex flex-wrap gap-4">
             <Link

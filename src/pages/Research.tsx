@@ -98,7 +98,8 @@ const methods = [
     icon: Layers,
     title: "Attention, Gating & Multi-Branch Fusion",
     desc: "Learning how to combine heterogeneous representations instead of averaging or concatenating them.",
-    evidence: "CoMAF-Polyp calibrated reliability-weighted pseudo-label fusion - WaveFoG wavelet sub-band gating - BGD-SF boundary-guided selective attention fusion",
+    // evidence: "CoMAF-Polyp calibrated reliability-weighted pseudo-label fusion - WaveFoG wavelet sub-band gating - BGD-SF boundary-guided selective attention fusion",
+    evidence: "WaveFoG wavelet sub-band gating - BGD-SF boundary-guided selective attention fusion",
   },
   {
     icon: Cpu,

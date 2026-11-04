@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, Clock, PenLine, type LucideIcon } from "lucide-react";
+import { CheckCircle2, Clock, type LucideIcon } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -147,20 +147,20 @@ const sections: Section[] = [
       },
     ],
   },
-  {
-    status: "In Preparation",
-    icon: PenLine,
-    blurb: "Manuscript in preparation for MIDL 2027.",
-    papers: [
-      {
-        tag: "MIDL 2027",
-        title:
-          "CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation",
-        authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Camila González",
-        venue: "Target venue: Medical Imaging with Deep Learning (MIDL) 2027",
-      },
-    ],
-  },
+  // {
+    // status: "In Preparation",
+    // icon: PenLine,
+    // blurb: "Manuscript in preparation for MIDL 2027.",
+    // papers: [
+      // {
+        // tag: "MIDL 2027",
+        // title:
+          // "CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation",
+        // authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Camila González",
+        // venue: "Target venue: Medical Imaging with Deep Learning (MIDL) 2027",
+      // },
+    // ],
+  // },
 ];
 
 const totalPapers = sections.reduce((n, s) => n + s.papers.length, 0);
