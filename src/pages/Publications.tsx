@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, Clock, type LucideIcon } from "lucide-react";
+import { CheckCircle2, Clock, PenLine, type LucideIcon } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -86,35 +86,8 @@ const sections: Section[] = [
   {
     status: "Under Review",
     icon: Clock,
-    blurb: "Submitted to peer-reviewed journals, IEEE ISBI 2027, and WACV 2027 workshops.",
+    blurb: "Submitted to IEEE ISBI 2027 and WACV 2027 workshops.",
     papers: [
-      {
-        tag: "IEEE JBHI",
-        title: "LCM-UNet: Scale-Selective Mamba with Reparameterizable Multi-Basis Local Modeling for Lightweight Skin Lesion Segmentation",
-        authors: "Md Shihabul Islam Shovo, Nishi Kanta Paul, Dip Kumar Saha, Kishor Morol",
-        venue: "IEEE Journal of Biomedical and Health Informatics",
-        arxiv: "https://arxiv.org/abs/2611.04409",
-        quartile: "Q1",
-        impactFactor: "7.7",
-      },
-      {
-        tag: "IEEE Access",
-        title: "Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access",
-        authors: "Asma Jodeiri Akbarfam, Nishi Kanta Paul, Shereen Ismail",
-        venue: "IEEE Access",
-        quartile: "Q1",
-        impactFactor: "4.2",
-      },
-      {
-        tag: "PLOS ONE",
-        title:
-          "BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images",
-        authors: "Nishi Kanta Paul, Shamia Maherin, Morsheda Akter, Moinul Hossain, Md Kishor Morol",
-        venue: "PLOS ONE",
-        quartile: "Q1",
-        impactFactor: "2.8",
-        arxiv: "https://arxiv.org/abs/2611.02603",
-      },
       {
         tag: "ISBI 2027",
         title:
@@ -147,11 +120,17 @@ const sections: Section[] = [
       },
     ],
   },
-  // {
-    // status: "In Preparation",
-    // icon: PenLine,
-    // blurb: "Manuscript in preparation for MIDL 2027.",
-    // papers: [
+  {
+    status: "In Preparation",
+    icon: PenLine,
+    blurb: "Manuscript in preparation.",
+    papers: [
+      {
+        tag: "IEEE Access",
+        title: "Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access",
+        authors: "Asma Jodeiri Akbarfam, Nishi Kanta Paul, Shereen Ismail",
+        venue: "Target venue: IEEE Access",
+      },
       // {
         // tag: "MIDL 2027",
         // title:
@@ -159,8 +138,8 @@ const sections: Section[] = [
         // authors: "Nishi Kanta Paul, Md Shihabul Islam Shovo, Camila González",
         // venue: "Target venue: Medical Imaging with Deep Learning (MIDL) 2027",
       // },
-    // ],
-  // },
+    ],
+  },
 ];
 
 const totalPapers = sections.reduce((n, s) => n + s.papers.length, 0);

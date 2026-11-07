@@ -12,7 +12,6 @@ const areas = [
     papers: [
       { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
       { name: "WaveFoG", link: "/papers/WaveFoG.pdf" },
-      { name: "LCM-UNet", link: "https://arxiv.org/abs/2611.04409" },
     ],
   },
   {
@@ -20,7 +19,6 @@ const areas = [
     title: "Efficient & Edge AI",
     desc: "Building models under hard parameter, latency, and FLOP budgets so they run on CPUs, edge devices, and consumer hardware  using structural reparameterization, compact backbones, and architecture-level compression rather than post-hoc pruning alone.",
     papers: [
-      { name: "LCM-UNet", link: "https://arxiv.org/abs/2611.04409" },
       { name: "SleepEffFormer", link: "/papers/SleepEffFormer.pdf" },
       { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
     ],
@@ -30,9 +28,8 @@ const areas = [
     title: "Computer Vision",
     desc: "Classification, segmentation, and dense prediction  including boundary-aware segmentation, multi-scale context aggregation, selective skip fusion, and ensemble strategies that adapt to the input rather than averaging over it.",
     papers: [
-      { name: "BGD-SF PolySegNet", link: "https://arxiv.org/abs/2611.02603" },
-      { name: "LCM-UNet", link: "https://arxiv.org/abs/2611.04409" },
       { name: "APED-CXR", link: "https://arxiv.org/abs/2610.29740" },
+      { name: "DR-LiteNet", link: "/papers/DR-LiteNet.pdf" },
     ],
   },
   {
@@ -79,9 +76,9 @@ const areas = [
     title: "Rigorous Evaluation & Reproducibility",
     desc: "Treating experimental design as part of the contribution: subject-disjoint and grouped cross-validation, external held-out datasets, non-parametric significance testing with effect sizes, and baselines that share identical folds and preprocessing.",
     papers: [
-      { name: "BGD-SF PolySegNet", link: "https://arxiv.org/abs/2611.02603" },
-      { name: "LCM-UNet", link: "https://arxiv.org/abs/2611.04409" },
       { name: "AquaProbe", link: "https://arxiv.org/abs/2610.40900" },
+      { name: "SleepEffFormer", link: "/papers/SleepEffFormer.pdf" },
+      { name: "Band2Net", link: "https://arxiv.org/abs/2611.01548" },
     ],
   },
 ];
@@ -92,20 +89,14 @@ const methods = [
     icon: Shrink,
     title: "Efficient & Lightweight Architectures",
     desc: "Designing models under hard parameter and FLOP budgets without surrendering accuracy.",
-    evidence: "LCM-UNet at 33,474 parameters - SleepEffFormer matching AttnSleep with 3-5x fewer parameters - DR-LiteNet beating ResNet50 at a fifth of the size",
+    evidence: "SleepEffFormer matching AttnSleep with 3-5x fewer parameters - DR-LiteNet beating ResNet50 at a fifth of the size",
   },
   {
     icon: Layers,
     title: "Attention, Gating & Multi-Branch Fusion",
     desc: "Learning how to combine heterogeneous representations instead of averaging or concatenating them.",
-    // evidence: "CoMAF-Polyp calibrated reliability-weighted pseudo-label fusion - WaveFoG wavelet sub-band gating - BGD-SF boundary-guided selective attention fusion",
-    evidence: "WaveFoG wavelet sub-band gating - BGD-SF boundary-guided selective attention fusion",
-  },
-  {
-    icon: Cpu,
-    title: "Structural Reparameterization",
-    desc: "Adding capacity during training that folds away exactly at inference, leaving the deployed graph unchanged.",
-    evidence: "LCM-UNet - dilated, horizontal, and vertical depthwise adapter branches folded into the host kernel before inference",
+    // evidence: "CoMAF-Polyp calibrated reliability-weighted pseudo-label fusion - WaveFoG wavelet sub-band gating - Band2Net optimal-transport matching of EEG bands to fMRI network targets",
+    evidence: "WaveFoG wavelet sub-band gating - Band2Net optimal-transport matching of EEG bands to fMRI network targets",
   },
   {
     icon: Scale,
@@ -196,7 +187,9 @@ const Research = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="p-6 rounded-xl bg-card border border-border card-interactive"
+                className={`p-6 rounded-xl bg-card border border-border card-interactive${
+                  i === methods.length - 1 && methods.length % 2 === 1 ? " md:col-span-2" : ""
+                }`}
               >
                 <m.icon className="h-7 w-7 text-primary mb-3" />
                 <h4 className="font-heading font-semibold mb-2">{m.title}</h4>

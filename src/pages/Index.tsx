@@ -39,10 +39,10 @@ const news = [
 ];
 
 const impact = [
-  { value: "11", label: "Manuscripts" },
+  { value: "9", label: "Manuscripts" },
   { value: "4", label: "Accepted papers" },
-  { value: "7", label: "Under review" },
-  // { value: "1", label: "In preparation" },
+  { value: "4", label: "Under review" },
+  { value: "1", label: "In preparation" },
 ];
 
 const fadeUp = {
